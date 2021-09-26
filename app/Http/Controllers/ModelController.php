@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Arr;
 
 class ModelController extends Controller
 {
@@ -49,10 +51,31 @@ class ModelController extends Controller
     }
     public function editprofile()
     {
-        return view('editprofile');
+        $username = Auth::user()->name;
+        $user = DB::table('users')
+            ->where('name', $username)
+            ->get();
+        $profile = DB::table('profiles')
+            ->where('name', $username)
+            ->get();
+        return view('editprofile',['user' => json_decode($user)], ['profile' => json_decode($profile)]);
     }
     public function waitaccept()
     {
         return view('auth.waitaccept');
+    }
+     public function saveprofile(Request $request, Profile $profile)
+    {
+        $validatedData = $request->validate([
+                'description' => 'required',
+                'facebook' => 'required',
+                'instagram' => 'required',
+                'subscriptionfee' => 'required',
+            ]);
+        $user = Auth::user()->name;
+        $validatedData = Arr::add($validatedData, 'name', $user);
+        Profile::where('name', $user)->delete();
+        Profile::create($validatedData);
+        return redirect()->route('userprofile');
     }
 }

@@ -24,17 +24,17 @@
                         <div class="d-flex justify-content-center">https://www.facebook.com/miyukikuragawi/</div>
                         <div class="d-flex justify-content-center">https://www.instagram.com/miyukikuragawi/</div>
                         <div class="d-flex justify-content-center mt-4">
-                            <a href="{{ url('models/' . $model[0]->name.'/chat') }}" class="btn btn-success w-25">ok</a>
+                            <a class="btn btn-success w-25">ok</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="d-flex mt-1">
-            <button class="btn rounded-pill btn-outline-danger btn-sm" data-toggle="modal"
-                data-target="#exampleModal">subscribe</button>
+            <button class="btn rounded-pill btn-outline-danger btn-sm">subscribe</button>
             <img src="{{ asset('image/download (46).png') }}" class="mx-1" alt="">
-            <img src="{{ asset('image/download (37).png') }}" class="mx-1" alt="">
+            <a class="mx-1" href="{{ url('models/' . $model[0]->name.'/chat') }}"><img
+                    src="{{ asset('image/download (37).png') }}" alt=""></a>
             <img src="{{ asset('image/download (38).png') }}" class="ml-auto mx-1" alt="">
         </div>
         <p>Hi Honey, do you want to be closer to me? Natural beauty without silicone. Subscribe to me, dear ones</p>

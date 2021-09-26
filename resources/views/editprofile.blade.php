@@ -6,7 +6,7 @@
         <div class="col-10 col-lg-6">
             <div class="card border-0">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('saveprofile') }}" enctype="multipart/form-data">
                         @csrf
                         <a class="back_login" href="/userprofile">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -20,143 +20,78 @@
                         </div>
                         <div class="form-group">
                             <label for="firstname" class="font-weight-bold mb-0">First Name</label>
-                            <input type="text"
+                            <input type="text" disabled
                                 class="form-control signup_input @error('firstname') is-invalid @enderror"
-                                id="firstname" placeholder="Type here" value="{{ old('firstname') }}" required
+                                id="firstname" placeholder="Type here" value="{{$user[0]->firstname}}" required
                                 name="firstname" autocomplete="fistname" autofocus>
-                            @error('firstname')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="lastname" class="font-weight-bold mb-0">Last Name</label>
-                            <input type="text" class="form-control signup_input @error('lastname') is-invalid @enderror"
-                                id="lastname" placeholder="Type here" value="{{ old('lastname') }}" required
-                                name="lastname" autocomplete="lastname" autofocus>
-                            @error('lastname')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
+                            <input type="text" disabled
+                                class="form-control signup_input @error('lastname') is-invalid @enderror" id="lastname"
+                                placeholder="Type here" value="{{$user[0]->lastname}}" required name="lastname"
+                                autocomplete="lastname" autofocus>
                         </div>
                         <div class="form-group">
                             <label for="nationality" class="font-weight-bold mb-0">Nationality</label>
-                            <input type="text"
+                            <input type="text" disabled
                                 class="form-control signup_input @error('nationality') is-invalid @enderror"
                                 name="nationality" id="nationality" placeholder="Type here"
-                                value="{{ old('nationality') }}" required autocomplete="nationality" autofocus>
-                            @error('nationality')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
+                                value="{{$user[0]->nationality}}" required autocomplete="nationality" autofocus>
                         </div>
                         <div class="form-group">
                             <label for="birthdate" class="font-weight-bold mb-0">Birthdate</label>
-                            <input type="text"
+                            <input type="text" disabled
                                 class="form-control signup_input @error('birthdate') is-invalid @enderror"
-                                name="birthdate" id="birthdate" placeholder="Type here" value="{{ old('birthdate') }}"
+                                name="birthdate" id="birthdate" placeholder="Type here" value="{{$user[0]->birthdate}}"
                                 required autocomplete="birthdate" autofocus>
-                            @error('birthdate')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="email" class="font-weight-bold mb-0">Email Address</label>
-                            <input id="email" type="email" placeholder="Type here"
+                            <input id="email" type="email" placeholder="Type here" disabled
                                 class="form-control signup_input @error('email') is-invalid @enderror" name="email"
-                                value="{{ old('email') }}" required autocomplete="email">
-
-                            @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
+                                value="{{$user[0]->email}}" required autocomplete="email">
                         </div>
                         <div class="form-group">
                             <label for="password" class="font-weight-bold mb-0">Password</label>
-                            <input id="password" type="password" placeholder="Type here"
+                            <input id="password" type="password" placeholder="Type here" disabled
                                 class="form-control signup_input @error('password') is-invalid @enderror"
                                 name="password" required autocomplete="new-password">
-                            @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="referralcode" class="font-weight-bold mb-0">Referral Code</label>
-                            <input type="text"
+                            <input type="text" disabled
                                 class="form-control signup_input @error('referralcode') is-invalid @enderror"
                                 name="referralcode" id="referralcode" placeholder="Type here"
-                                value="{{ old('referralcode') }}" required autocomplete="referralcode" autofocus>
-                            @error('referralcode')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
+                                value="{{$user[0]->referralcode}}" required autocomplete="referralcode" autofocus>
                         </div>
                         <div class="form-group">
                             <label for="nationality" class="font-weight-bold mb-0">Description</label>
                             <input type="text"
-                                class="form-control signup_input @error('Description') is-invalid @enderror"
-                                name="Description" id="Description" placeholder="Type here"
-                                value="{{ old('Description') }}" required autocomplete="Description" autofocus>
-                            @error('Description')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="about" class="font-weight-bold mb-0">About Yourself</label>
-                            <input type="text" class="form-control signup_input @error('about') is-invalid @enderror"
-                                name="about" id="about" placeholder="Type here" value="{{ old('about') }}" required
-                                autocomplete="about" autofocus>
-                            @error('about')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
+                                class="form-control signup_input @error('description') is-invalid @enderror"
+                                name="description" id="Description" placeholder="Type here"
+                                value="{{$profile[0]->description}}" required autocomplete="description" autofocus>
                         </div>
                         <div class="form-group">
                             <label for="facebook" class="font-weight-bold mb-0">Facebook</label>
                             <input type="text" class="form-control signup_input @error('facebook') is-invalid @enderror"
-                                name="facebook" id="facebook" placeholder="Type here" value="{{ old('facebook') }}"
+                                name="facebook" id="facebook" placeholder="Type here" value="{{$profile[0]->facebook}}"
                                 required autocomplete="facebook" autofocus>
-                            @error('facebook')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="instagram" class="font-weight-bold mb-0">Instagram</label>
                             <input type="text"
                                 class="form-control signup_input @error('instagram') is-invalid @enderror"
-                                name="instagram" id="instagram" placeholder="Type here" value="{{ old('instagram') }}"
-                                required autocomplete="instagram" autofocus>
-                            @error('instagram')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
+                                name="instagram" id="instagram" placeholder="Type here"
+                                value="{{$profile[0]->instagram}}" required autocomplete="instagram" autofocus>
                         </div>
                         <div class="form-group">
                             <label for="subscriptionfee" class="font-weight-bold mb-0">Subscription Fee</label>
                             <input type="text"
                                 class="form-control signup_input @error('subscriptionfee') is-invalid @enderror"
                                 name="subscriptionfee" id="subscriptionfee" placeholder="Type here"
-                                value="{{ old('subscriptionfee') }}" required autocomplete="subscriptionfee" autofocus>
-                            @error('subscriptionfee')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
+                                value="{{$profile[0]->subscriptionfee}}" required autocomplete="subscriptionfee"
+                                autofocus>
                         </div>
                         <div class="form-group upload_block">
                             <label class="font-weight-bold mb-0">Scanned Valid Government Issued
@@ -169,11 +104,6 @@
                                 class="form-control upload_input signup_input @error('governmentid') is-invalid @enderror"
                                 id="governmentid" placeholder="Type here" value="{{ old('governmentid') }}"
                                 autocomplete="governmentid" autofocus>
-                            @error('governmentid')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
                         </div>
                         <div class="form-group row justify-content-center">
                             <div class="dd-grid gap-2 col-md-8 justify-content-center">

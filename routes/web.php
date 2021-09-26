@@ -40,15 +40,15 @@ Route::get('/models/{name}', [
 Route::get('/userprofile', [
     App\Http\Controllers\ModelController::class,
     'profile',
-]);
+])->name('userprofile');
 Route::get('/editprofile', [
     App\Http\Controllers\ModelController::class,
     'editprofile',
-]);
-Route::get('/saveprofile', [
+])->name('editprofile');
+Route::post('/saveprofile', [
     App\Http\Controllers\ModelController::class,
     'saveprofile',
-]);
+])->name('saveprofile');
 Route::get('/models/{name}/chat', [
     App\Http\Controllers\ModelsController::class,
     'chat',
