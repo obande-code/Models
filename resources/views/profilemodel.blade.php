@@ -12,13 +12,13 @@
             </a>
             <div class="d-flex justify-content-center">{{$model[0]->name}}</div>
         </div>
-        <!-- <div class="d-flex mt-1">
+        <div class="d-flex mt-1">
             <button class="btn rounded-pill btn-outline-danger btn-sm">subscribe</button>
             <img src="{{ asset('image/download (46).png') }}" class="mx-1 chat_icon" alt="">
             <img src="{{ asset('image/download (37).png') }}" class="mx-1 chat_icon" alt="">
             <a href="/editprofile" class="ml-auto mx-1"><img src="{{ asset('image/download (69).png') }}"
                     class="setting_icon" alt=""></a>
-        </div> -->
+        </div>
         <p>Hi Honey, do you want to be closer to me? Natural beauty without silicone. Subscribe to me, dear ones</p>
         <div class="row p-3">
 
