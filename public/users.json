@@ -1,0 +1,11 @@
+[
+    {
+        "name_name":"John", "email":"example@gmail.com", "dob":111
+    },
+    {
+        "name_name":"Barry", "email":"example@gmail.com", "dob":222
+    },
+    {
+        "name_name":"Michael", "email":"example@gmail.com", "dob":333
+    }
+]

@@ -1,0 +1,230 @@
+* .btn {
+    border-radius: 0 !important;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: black !important;
+}
+.btn-suche {
+    color: #fff;
+    background-color: #39C6C8;
+    border-color: #39C6C8;
+}
+.btn-login {
+    color: #fff;
+    background-color: #FED404;
+    border-color: #FED404;
+}
+.btn-anfrage {
+    color: #fff;
+    background-color: #FF7209;
+    border-color: #FF7209;
+    margin-right:10px;
+    padding: 13px 10px 14px 10px;
+}
+.btn-tender {
+    color: #fff;
+    background-color: #32C0C2;
+    border-color: #32C0C2;
+    padding: 2px 10px;
+}
+.btn-suche:hover,.btn-login:hover,.btn-anfrage:hover,.btn-tender:hover,.btn-outline-white:hover {
+    color: #fff;
+    opacity: 0.8;
+}
+.carousel-indicators > li {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+.carousel-indicators > li.active {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: rgb(26, 240, 222);
+}
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    top: 60px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+.carousel-cation-head {
+    font-size: 1.5rem;
+}
+.carousel-btn {
+    margin-top:15px;
+}
+.heading-panel {
+    text-align:center;
+    padding: 50px 50px 30px 50px;
+}
+.heading-panel p {
+    padding: 40px;
+}
+.list-panel {
+    background-color:#38C3C6;
+    color:white;
+    padding:40px;
+    text-align:center;
+}
+.list-panel-active {
+    background-color:#24A8AC;
+    color:white;
+    padding:40px;
+    text-align:center;
+}
+.shadow-panel {
+    box-shadow: 0 10px 8px -8px rgba(0, 0, 0, 0.2), 0 25px 20px -20px rgba(0, 0, 0, 0.19);
+}
+.icon-panel {
+    padding:40px;
+    text-align:center;
+}
+.btn-outline-white {
+    color: white;
+    border-color: white;
+}
+.btn-outline-black {
+    color: black;
+    border-color: black;
+}
+.btn-outline-black:hover {
+    color: red;
+    border-color: red;
+}
+.bottom-panel {
+    color:white;
+}
+.bottom-panel a {
+    color:white;
+    text-decoration: none;
+}
+.bottom-panel a:hover {
+    opacity: 0.8;
+}
+.bottom-link {
+    background-color:#999999;
+    min-height:150px;
+}
+.left-link {
+    margin-top: 100px;
+}
+.bottom-facebook {
+    line-height: 70px;
+    height: 70px;
+}
+.vertical-center {
+    line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
+}
+.img-caption {
+    position:absolute;
+    right:15%;
+    top:35%;
+    left:15%;
+    z-index:10;
+    text-align:center;
+}
+.shadow-jumbotron {
+    width: 100%;
+    background-color: #F6F7F7;
+    box-shadow: inset 0px 15px 10px -10px #CCC;
+    padding: 40px 100px;
+}
+.circle-number-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #0CF1F5;
+    color: #0CF1F5;
+    border-radius: 50%;
+    text-align: center;
+    padding: 4px;
+    font-size: 20px;
+    margin: auto;
+}
+.custom-padding-left {
+    padding-left: 0px;
+}
+.custom-padding-right {
+    padding-right: 0px;
+}
+.custom-left {
+    padding-left: 5px;
+}
+.custom-right {
+    padding-right: 5px;
+}
+.custom-table thead {
+    background-color:#33C1C3;
+    color:white;
+}
+.custom-table thead tr th,.custom-table tbody tr td {
+    border-right: 2px solid white;
+    border-bottom: none;
+}
+.custom-table thead tr th:last-child,.custom-table tbody tr td:last-child {
+    border: none;
+}
+.custom-table tbody tr:nth-child(odd) {
+    background-color:#EEEEEE;
+}
+.custom-table tbody tr:nth-child(even) {
+    background-color:#C2C9CF;
+}
+@media (max-width: 992px) {
+    .carousel-caption {
+        top: 40px;
+    }
+    .carousel-cation-head {
+        font-size: 1rem;
+    }
+    .heading-panel {
+        padding: 40px 40px 20px 40px;
+    }
+    .heading-panel p {
+        padding: 20px;
+    }
+    .list-panel,.list-panel-active,.icon-panel {
+        padding: 30px;
+    }
+}
+@media (max-width: 768px) {
+    .carousel-caption {
+        top: 30px;
+    }
+    .carousel-cation-head,.about-caption,.protection-caption {
+        font-size: 1rem;
+    }
+    .heading-panel {
+        padding: 30px 30px 10px 30px;
+    }
+    .heading-panel p {
+        padding: 10px;
+    }
+    .list-panel,.list-panel-active,.icon-panel {
+        padding: 20px;
+    }
+    .left-link {
+        margin-top: 30px;
+    }
+    .img-caption p {
+        display: none;
+    }
+    .custom-padding-left,.custom-left {
+        padding-left: 15px;
+    }
+    .custom-padding-right,.custom-right {
+        padding-right: 15px;
+    }   
+}
+@media (max-width: 510px) {
+    .carousel-btn {
+        display: none;
+    }
+}

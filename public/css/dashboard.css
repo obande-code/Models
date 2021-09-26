@@ -1,0 +1,159 @@
+.model_round_img {
+  width: 7vw;
+}
+body {
+  overflow-x: hidden;
+}
+@media only screen and (max-width: 426px) {
+  .models_search {
+    display: none !important;
+  }
+  .models_round_img_container {
+    display: none !important;
+  }
+  .maincontent_img {
+    width: 100% !important;
+  }
+  .main {
+    padding: 0px !important;
+  }
+  .header_username {
+    display: none;
+  }
+}
+.search_input {
+  width: 90%;
+}
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .models_search {
+    display: none !important;
+  }
+}
+
+.image_middle {
+  margin-top: -13%;
+}
+.video_img {
+  width: 33%;
+}
+.post_img {
+  width: 100px;
+}
+.btn_post {
+  width: 100px;
+}
+.post_item {
+  border-bottom: 1px solid;
+  border-color: darkgray;
+  background: white;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .btn_addpost {
+    width: 300px !important;
+    left: 40%;
+  }
+}
+.btn_delpost {
+  width: 30px;
+}
+.btn_editpost {
+  width: 30px;
+}
+.edit_del_block {
+  top: 0;
+  height: 125px;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: -1;
+}
+.signup_input {
+  border: 0;
+  border-bottom: 1px solid;
+  border-radius: 0;
+  padding: 0;
+}
+.signup_input:focus {
+  border-color: black !important;
+  box-shadow: none !important;
+}
+.upload_input {
+  z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+.upload_label {
+  width: 100px;
+  position: absolute;
+  right: 20px;
+}
+.login_button {
+  background-color: #a81818;
+  border-color: #a81818;
+}
+.setting_icon {
+  width: 37px;
+  cursor: pointer;
+}
+.chat_icon {
+  width: 24px;
+}
+@media (max-width: 767.98px) {
+  .hidden_p {
+    display: none;
+  }
+  .sidebar_footer {
+    display: none;
+  }
+  .model_img_mobile {
+    width: 100% !important;
+  }
+}
+
+.sidebar_footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.heard_img {
+  width: 20px;
+  height: 20px;
+}
+
+.line {
+  height: 1px;
+  background-color: darkgray;
+}
+
+.red_arrow {
+  width: 30px;
+  height: 30px;
+}
+.post_badge {
+  width: 60px;
+  font-size: 9px;
+  position: absolute;
+  left: 0;
+  height: 20px;
+  padding: 0;
+}
+.info_image {
+  position: absolute;
+  width: 20px;
+  right: 10px;
+  top: 10px;
+}
