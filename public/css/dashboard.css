@@ -157,3 +157,7 @@ body {
   right: 10px;
   top: 10px;
 }
+.chat_user {
+  background-color: black;
+  width: 20px;
+}
