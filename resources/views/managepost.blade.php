@@ -6,7 +6,14 @@
         <div class="d-flex justify-content-between mt-3 pb-2 post_item"
             onclick="editshowClick({{substr($post->image_video, 0, 10)}})">
             <div class="d-flex flex-column justify-content-center img-contain">
+                @if($post->type != 'Premium')
                 <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" alt="" class="mx-3 rounded post_img">
+                @endif
+                @if($post->type == 'Premium')
+                <video height="100" class="mx-3 premium-video">
+                    <source src="{{asset('storage/uploads/' .$post->image_video. '')}}" type="video/mp4">
+                </video>
+                @endif
             </div>
             <div class="d-flex flex-column justify-content-center">
                 <p class="mx-3 mb-0">

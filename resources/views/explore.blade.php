@@ -14,16 +14,17 @@
   </div>
   <div class=" w-75 d-flex model_img_mobile mt-3 row">
     @foreach ($freeposts as $post)
-    <div class="col-lg-3 col-6 text-center img-block p-1">
-      <div>
+    <div class="col-lg-4 col-6 text-center img-block p-1">
+      <div class="img-container">
         <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" alt="" class="w-100 free-img">
       </div>
       <a href="{{ url('models/' . $post->username) }}"><h6 class="post-name text-light">{{$post->username}}</h6></a> 
     </div>
     @endforeach
   </div>
-  <div class="paginate-block">
+  
+</div>
+<div class="paginate-block">
   {!! $freeposts->links() !!}
   </div>
-</div>
 @endsection

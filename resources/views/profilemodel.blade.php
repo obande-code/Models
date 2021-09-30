@@ -3,6 +3,8 @@
 <div class="d-flex justify-content-center flex-wrap">
     <div class=" w-75 d-flex flex-column model_img_mobile">
         <div class="mt-2 d-flex flex-column model_img_mobile position-relative">
+            <input type="file" name="cover_img" style="visibility: hidden; height: 0" id="cover_img">
+            
             <img src="{{ asset('image/download (26).png') }}" class="mt-2" alt="">
             <img src="{{ asset('image/download (74).png') }}" class="info_image" alt="">
             <a>
@@ -30,7 +32,9 @@
                 <button class="btn btn-success btn-sm rounded-pill btn_post post_badge">Subscriber</button>
                 @endif
                 @if($post->type == 'Premium')
-                <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="model-post-img w-100 p-0 premium_image" alt="">
+                <video class="model-post-img w-100 p-0" controls>
+                    <source src="{{asset('storage/uploads/' .$post->image_video. '')}}" type="video/mp4">
+                </video>
                 <button class="btn btn-warning btn-sm text-light rounded-pill btn_post post_badge">Premium</button>
                 @endif
             </div>

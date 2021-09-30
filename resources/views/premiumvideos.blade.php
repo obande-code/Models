@@ -14,11 +14,12 @@
   </div>
   <div class=" w-75 d-flex model_img_mobile mt-3 row">
   @foreach ($premium as $post)
-  <div class="col-lg-3 col-6 p-0 text-center img-block p-1">
-    <div>
-      <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" alt="" class="w-100 premium-img">
+  <div class="col-lg-4 col-6 p-0 text-center img-block p-1">
+    <div class="premium-video-container">
+      <video class="model-post-img w-100 p-0" style="filter: blur(10px)">
+          <source src="{{asset('storage/uploads/' .$post->image_video. '')}}" type="video/mp4">
+      </video>
     </div>
-    <h6 class="post-name text-light">{{$post->username}}</h6>
   </div>
   @endforeach
   </div>

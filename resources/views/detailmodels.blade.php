@@ -52,7 +52,9 @@
                 <button class="btn btn-success btn-sm rounded-pill btn_post post_badge">Subscriber</button>
                 @endif
                 @if($post->type == 'Premium')
-                <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="model-post-img w-100 p-0 premium_image" alt="">
+                <video controls class="model-post-img w-100 p-0 premium_image">
+                    <source src="{{asset('storage/uploads/' .$post->image_video. '')}}" type="video/mp4">
+                </video>
                 <button class="btn btn-warning btn-sm text-light rounded-pill btn_post post_badge">Premium</button>
                 @endif
             </div>
