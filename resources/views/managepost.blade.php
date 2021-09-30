@@ -5,8 +5,8 @@
     <div class="position-relative">
         <div class="d-flex justify-content-between mt-3 pb-2 post_item"
             onclick="editshowClick({{substr($post->image_video, 0, 10)}})">
-            <div class="d-flex flex-column justify-content-center">
-                <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" alt="" class="mx-3 post_img">
+            <div class="d-flex flex-column justify-content-center img-contain">
+                <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" alt="" class="mx-3 rounded post_img">
             </div>
             <div class="d-flex flex-column justify-content-center">
                 <p class="mx-3 mb-0">

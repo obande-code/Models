@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 @section('mainContent')
 <div class="d-flex justify-content-center flex-wrap">
-    <div class=" w-50 d-flex flex-column model_img_mobile">
+    <div class=" w-75 d-flex flex-column model_img_mobile">
         <div class="mt-2 d-flex flex-column model_img_mobile position-relative">
             <img src="{{ asset('image/download (26).png') }}" class="mt-2" alt="">
             <img src="{{ asset('image/download (74).png') }}" class="info_image" alt="">
@@ -31,25 +31,28 @@
             </div>
         </div>
         <div class="d-flex mt-1">
-            <button class="btn rounded-pill btn-outline-danger btn-sm">subscribe</button>
-            <img src="{{ asset('image/download (46).png') }}" class="mx-1" alt="">
-            <a class="mx-1" href="{{ url('models/' . $model[0]->name.'/chat') }}"><img
-                    src="{{ asset('image/download (37).png') }}" alt=""></a>
+            <button class="btn rounded-pill btn-outline-danger btn-sm btn-subscribe mx-1" onclick="subscribe()">Subscribe</button>
+            <img src="{{ asset('image/download (71).png') }}" class="mx-2 heart-img" alt="">
+            <a class="mx-1" href="{{ url('models/' . $model[0]->name.'/chat') }}">
+                <img src="{{ asset('image/download (37).png') }}" class="chat-img" alt="">
+            </a>
             <img src="{{ asset('image/download (38).png') }}" class="ml-auto mx-1" alt="">
         </div>
         <p>Hi Honey, do you want to be closer to me? Natural beauty without silicone. Subscribe to me, dear ones</p>
         <div class="row p-3">
 
             @foreach($posts as $post)
-            <div class="position-relative col-lg-4 col-6 p-0">
-                <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="col-12 p-0" alt="">
+            <div class="position-relative col-lg-4 col-6 p-0 overflow-hidden d-flex">
                 @if($post->type == 'Free')
+                <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="model-post-img w-100 p-auto" alt="">
                 <button class="btn btn-primary btn-sm rounded-pill btn_post post_badge">Free</button>
                 @endif
                 @if($post->type == 'Subscriber')
+                <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="model-post-img w-100 p-0 subscribe_image" alt="">
                 <button class="btn btn-success btn-sm rounded-pill btn_post post_badge">Subscriber</button>
                 @endif
                 @if($post->type == 'Premium')
+                <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="model-post-img w-100 p-0 premium_image" alt="">
                 <button class="btn btn-warning btn-sm text-light rounded-pill btn_post post_badge">Premium</button>
                 @endif
             </div>
@@ -58,4 +61,12 @@
         </div>
     </div>
 </div>
+<script>
+    function subscribe() {
+        let subscribes = document.getElementsByClassName('subscribe_image');
+        for (let index = 0; index < subscribes.length; index++) {
+            subscribes[index].style.filter = 'blur(0)';
+        }
+    }
+</script>
 @endsection

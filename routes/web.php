@@ -69,10 +69,18 @@ Route::get('/premiumvideos', [
     App\Http\Controllers\PremiumvideosController::class,
     'index',
 ])->name('premiumvideos');
+Route::post('/premiumvideos/search', [
+    App\Http\Controllers\PremiumvideosController::class,
+    'search',
+])->name('premiumvideosearch');
 Route::get('/explore', [
     App\Http\Controllers\ExploreController::class,
     'index',
 ])->name('explore');
+Route::post('/explore/search', [
+    App\Http\Controllers\ExploreController::class,
+    'search',
+])->name('exploresearch');
 Route::get('/favorites', [
     App\Http\Controllers\FavoritesController::class,
     'index',

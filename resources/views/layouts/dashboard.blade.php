@@ -158,7 +158,7 @@
         </nav>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 main">
             <div class="row">
-                <div class="col-md-9 col-sm-12">
+                <div class="col-md-9 col-sm-12" style="height: 95vh">
                     @yield('mainContent')
                 </div>
                 <div class="col-3 d-flex flex-column mt-2 border-left mt-3 models_search">

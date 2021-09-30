@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 @section('mainContent')
 <div class="d-flex justify-content-center flex-wrap">
-    <div class=" w-50 d-flex flex-column model_img_mobile">
+    <div class=" w-75 d-flex flex-column model_img_mobile">
         <div class="mt-2 d-flex flex-column model_img_mobile position-relative">
             <img src="{{ asset('image/download (26).png') }}" class="mt-2" alt="">
             <img src="{{ asset('image/download (74).png') }}" class="info_image" alt="">
@@ -13,9 +13,6 @@
             <div class="d-flex justify-content-center">{{$model[0]->name}}</div>
         </div>
         <div class="d-flex mt-1">
-            <button class="btn rounded-pill btn-outline-danger btn-sm">subscribe</button>
-            <img src="{{ asset('image/download (46).png') }}" class="mx-1 chat_icon" alt="">
-            <img src="{{ asset('image/download (37).png') }}" class="mx-1 chat_icon" alt="">
             <a href="/editprofile" class="ml-auto mx-1"><img src="{{ asset('image/download (69).png') }}"
                     class="setting_icon" alt=""></a>
         </div>
@@ -23,15 +20,17 @@
         <div class="row p-3">
 
             @foreach($posts as $post)
-            <div class="position-relative col-lg-4 col-6 p-0">
-                <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="col-12 p-0" alt="">
+            <div class="position-relative col-lg-4 col-6 p-0 overflow-hidden d-flex">
                 @if($post->type == 'Free')
+                <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="model-post-img w-100 p-auto" alt="">
                 <button class="btn btn-primary btn-sm rounded-pill btn_post post_badge">Free</button>
                 @endif
                 @if($post->type == 'Subscriber')
+                <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="model-post-img w-100 p-0 subscribe_image" alt="">
                 <button class="btn btn-success btn-sm rounded-pill btn_post post_badge">Subscriber</button>
                 @endif
                 @if($post->type == 'Premium')
+                <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="model-post-img w-100 p-0 premium_image" alt="">
                 <button class="btn btn-warning btn-sm text-light rounded-pill btn_post post_badge">Premium</button>
                 @endif
             </div>

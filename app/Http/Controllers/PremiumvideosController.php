@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PremiumvideosController extends Controller
 {
@@ -28,6 +29,31 @@ class PremiumvideosController extends Controller
         if (session('accept') == false) {
             return redirect()->route('waitaccept');
         }
-        return view('premiumvideos');
+        $premium = DB::table('posts')
+            ->where('type', 'Premium')
+            ->get();
+        $premium = json_decode($premium);
+        shuffle($premium);
+        return view('premiumvideos', compact('premium'));
+    }
+    public function search(Request $request)
+    {
+        if (session('accept') == false) {
+            return redirect()->route('waitaccept');
+        }
+        if ($request->search != '') {
+            $premium = DB::table('posts')
+            ->where('type', 'Premium')
+            ->where('username', 'like', '%' . $request->search . '%')
+            ->get();
+        }
+        else {
+            $premium = DB::table('posts')
+            ->where('type', 'Premium')
+            ->get();
+        }
+        $premium = json_decode($premium);
+        shuffle($premium);
+        return view('premiumvideos', compact('premium'));
     }
 }

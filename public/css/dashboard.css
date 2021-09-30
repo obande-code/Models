@@ -52,6 +52,7 @@ body {
 }
 .post_img {
   width: 100px;
+  overflow: hidden;
 }
 .btn_post {
   width: 100px;
@@ -147,7 +148,8 @@ body {
   width: 60px;
   font-size: 9px;
   position: absolute;
-  left: 0;
+  left: 5px;
+  top: 5px;
   height: 20px;
   padding: 0;
 }
@@ -160,4 +162,49 @@ body {
 .chat_user {
   background-color: black;
   width: 20px;
+}
+.btn-subscribe {
+  padding: 0 10px;
+  margin-left: 10px;
+}
+.heart-img {
+  width: 30px;
+}
+.chat-img {
+  width: 30px;
+}
+.subscribe_image {
+  filter: blur(30px);
+}
+.premium_image {
+  filter: blur(30px);
+}
+.post-name {
+  margin-top: -28px;
+  margin-bottom: 0px;
+  background-color: black;
+  opacity: 0.5;
+  padding: 5px 0;
+}
+.img-block {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+.model-post-img {
+  height: 170px;
+}
+.free-img {
+  height: 140px;
+}
+.premium-img {
+  height: 140px;
+}
+.img-contain {
+  height: 100px;
+}
+.paginate-block {
+  position: absolute;
+  bottom: 0;
 }
