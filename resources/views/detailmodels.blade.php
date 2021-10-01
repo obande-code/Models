@@ -44,11 +44,15 @@
             @foreach($posts as $post)
             <div class="position-relative col-lg-4 col-6 p-0 overflow-hidden d-flex">
                 @if($post->type == 'Free')
-                <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="model-post-img w-100 p-auto" alt="">
+                <div class="img-container">
+                    <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="free-img w-100 p-auto" alt="">
+                </div>
                 <button class="btn btn-primary btn-sm rounded-pill btn_post post_badge">Free</button>
                 @endif
                 @if($post->type == 'Subscriber')
-                <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="model-post-img w-100 p-0 subscribe_image" alt="">
+                <div class="img-container">
+                    <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="free-img w-100 subscribe_image p-auto" alt="">
+                </div>
                 <button class="btn btn-success btn-sm rounded-pill btn_post post_badge">Subscriber</button>
                 @endif
                 @if($post->type == 'Premium')
