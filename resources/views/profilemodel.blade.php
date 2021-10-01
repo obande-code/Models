@@ -4,13 +4,14 @@
     <div class=" w-75 d-flex flex-column model_img_mobile">
         <div class="mt-2 d-flex flex-column model_img_mobile position-relative">
             <input type="file" name="cover_img" style="visibility: hidden; height: 0" id="cover_img">
-            
+            <input type="file" name="user_img" style="visibility: hidden; height: 0" id="user_img">
             <img src="{{ asset('image/download (26).png') }}" class="mt-2" alt="">
             <img src="{{ asset('image/download (74).png') }}" class="info_image" alt="">
-            <p class="change-cover text-light" onclick="changecover()">Change cover</p>
+            <p class="change-cover text-light" onclick="changecover()">Change Cover</p>
             <a>
                 <div class="image_middle">
                     <img src="{{ asset('image/cat5.jpg') }}" class="w-100 user-image" alt="">
+                    <p class="change-user text-light" onclick="changeuser()">Change<br>Profile</p>
                 </div>
             </a>
             <div class="d-flex justify-content-center">{{$model[0]->name}}</div>
@@ -53,6 +54,9 @@
 <script>
     function changecover() {
         document.getElementById('cover_img').click();
+    }
+    function changeuser() {
+        document.getElementById('user_img').click();
     }
 </script>
 @endsection
