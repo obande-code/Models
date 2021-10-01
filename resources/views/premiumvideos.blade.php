@@ -16,7 +16,7 @@
   @foreach ($premium as $post)
   <div class="col-lg-4 col-6 p-0 text-center img-block p-1">
     <div class="premium-video-container">
-      <video controls class="model-post-video w-100 p-0 videos" id="{{$post->image_video}}" style="filter: blur(10px)">
+      <video onclick="videoclick(event)" class="model-post-video w-100 p-0 videos" id="{{$post->image_video}}" style="filter: blur(10px)">
           <source src="{{asset('storage/uploads/' .$post->image_video. '')}}" type="video/mp4">
       </video>
       <button class="btn btn-warning btn-sm text-light rounded-pill btn_post post-tag">Premium</button>
@@ -27,12 +27,28 @@
         <span class="duration-span" id="{{$post->image_video . 'time'}}"></span>
       </div>
     </div>
-    <div class="post-user-image">
+    <div class="post-user-image" onclick="payclick(event)" id="{{$post->image_video . 'img'}}">
       <img src="{{asset('image/cat7.jpg')}}" alt="" class="">
     </div>
   </div>
   @endforeach
   </div>
+  <div class="modal fade" id="confirmDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-body d-flex justify-content-center">
+                  <h6>ARE YOU SURE YOU WANT TO PAY?</h6>
+              </div>
+              <div class="modal-footer d-flex justify-content-center">
+                  <button type="button" class="btn btn-danger rounded-pill btn-sm w-25"
+                      data-dismiss="modal">No</button>
+                  <button type="button" data-dismiss="modal" onclick="payclick()" class="btn btn-success rounded-pill btn-sm w-25">Yes</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <button id="btn-modal" style="height: 0;" class="m-0 p-0 border-0" data-toggle="modal" data-target="#confirmDelete">
+  </button>
 </div>
 <script>
 document.onreadystatechange = function () {
@@ -54,6 +70,22 @@ document.onreadystatechange = function () {
         let s2 = Math.floor(Math.random() * 10);document.getElementById(element.id+'time').innerHTML  = m1.toString()+m2.toString()+':'+s1.toString()+s2.toString();
       }
     }
+  }
+}
+function payclick(event) {
+  let selectvideo = localStorage.getItem("selectvideo");
+  document.getElementById(selectvideo).style.filter = 'blur(0px)';
+}
+function videoclick(event) {
+  console.log(event.currentTarget.style.filter)
+  let blur = event.currentTarget.style.filter;
+  if (blur != 'blur(10px)') {
+    event.currentTarget.controls = true;
+    event.currentTarget.style.zIndex = 1;
+  }
+  else {
+    document.getElementById('btn-modal').click();
+    localStorage.setItem("selectvideo", event.currentTarget.id);
   }
 }
 </script>
