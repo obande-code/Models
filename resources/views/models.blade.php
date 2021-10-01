@@ -18,8 +18,8 @@
             <div class="col-6 mt-2 d-flex flex-column model_img_mobile">
                 <img src="{{ asset('image/download (26).png') }}" class="mt-2" alt="">
                 <a href="{{ url('models/' . $model->name) }}">
-                    <div class="d-flex justify-content-center image_middle">
-                        <img src="{{ asset('image/download (27).png') }}" class="mt-2 w-25" alt="">
+                    <div class="image_middle">
+                        <img src="{{ asset('image/download (27).png') }}" class="w-100 user-image" alt="">
                     </div>
                 </a>
                 <div class="d-flex justify-content-center">{{$model->name}}</div>

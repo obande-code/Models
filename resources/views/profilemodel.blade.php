@@ -7,9 +7,10 @@
             
             <img src="{{ asset('image/download (26).png') }}" class="mt-2" alt="">
             <img src="{{ asset('image/download (74).png') }}" class="info_image" alt="">
+            <p class="change-cover text-light" onclick="changecover()">Change cover</p>
             <a>
-                <div class="d-flex justify-content-center image_middle">
-                    <img src="{{ asset('image/download (27).png') }}" class="mt-2 w-25" alt="">
+                <div class="image_middle">
+                    <img src="{{ asset('image/cat5.jpg') }}" class="w-100 user-image" alt="">
                 </div>
             </a>
             <div class="d-flex justify-content-center">{{$model[0]->name}}</div>
@@ -24,17 +25,23 @@
             @foreach($posts as $post)
             <div class="position-relative col-lg-4 col-6 p-0 overflow-hidden d-flex">
                 @if($post->type == 'Free')
-                <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="model-post-img w-100 p-auto" alt="">
+                <div class="img-container">
+                    <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="free-img w-100 p-auto" alt="">
+                </div>
                 <button class="btn btn-primary btn-sm rounded-pill btn_post post_badge">Free</button>
                 @endif
                 @if($post->type == 'Subscriber')
-                <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="model-post-img w-100 p-0 subscribe_image" alt="">
+                <div class="img-container">
+                    <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="free-img w-100 subscribe_image p-auto" alt="">
+                </div>
                 <button class="btn btn-success btn-sm rounded-pill btn_post post_badge">Subscriber</button>
                 @endif
                 @if($post->type == 'Premium')
-                <video class="model-post-img w-100 p-0" controls>
-                    <source src="{{asset('storage/uploads/' .$post->image_video. '')}}" type="video/mp4">
-                </video>
+                <div class="img-container">
+                    <video controls class="model-post-img w-100 p-0 free-img">
+                        <source src="{{asset('storage/uploads/' .$post->image_video. '')}}" type="video/mp4">
+                    </video>
+                </div>
                 <button class="btn btn-warning btn-sm text-light rounded-pill btn_post post_badge">Premium</button>
                 @endif
             </div>
@@ -43,4 +50,9 @@
         </div>
     </div>
 </div>
+<script>
+    function changecover() {
+        document.getElementById('cover_img').click();
+    }
+</script>
 @endsection

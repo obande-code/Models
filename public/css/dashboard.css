@@ -43,14 +43,38 @@ body {
     display: none !important;
   }
 }
-
 .image_middle {
-  margin-top: -13%;
+  position: relative;
+  border-radius: 200px;
+  overflow: hidden;
+  margin-top: -15%;
+  margin-left: 34%;
+  width: 30%; /* The size you want */
+}
+.image_middle:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%; /* The padding depends on the width, not on the height, so with a padding-bottom of 100% you will get a square */
+}
+.user-image {
+  position: absolute; /* Take your picture out of the flow */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; /* Make the picture taking the size of it's parent */
+  width: 100%; /* This if for the object-fit */
+  height: 100%; /* This if for the object-fit */
+  object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
+  object-position: center;
 }
 .video_img {
   width: 33%;
 }
 .post_img {
+  width: 100px;
+  overflow: hidden;
+}
+.premium-video {
   width: 100px;
   overflow: hidden;
 }
@@ -148,16 +172,74 @@ body {
   width: 60px;
   font-size: 9px;
   position: absolute;
-  left: 5px;
+  left: 10px;
+  top: 10px;
+  height: 20px;
+  padding: 0;
+}
+.post-tag {
+  width: 60px;
+  font-size: 9px;
+  position: absolute;
+  left: 10px;
   top: 5px;
   height: 20px;
   padding: 0;
+}
+.post-amount {
+  width: 60px;
+  font-size: 9px;
+  position: absolute;
+  right: -10px;
+  top: 5px;
+  height: 20px;
+  padding: 0;
+}
+.post-description {
+  width: 100%;
+  font-size: 9px;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  /* height: 20px; */
+  padding: 0;
+}
+.post-username {
+  width: 100%;
+  font-size: 9px;
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  padding: 0;
+}
+.post-duration {
+  width: 100%;
+  font-size: 9px;
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  padding: 0;
+}
+.duration-span {
+  background-color: grey;
+  border-radius: 20px;
+  padding: 3px 5px;
+}
+.post-user-image {
+  width: 35%;
+  overflow: hidden;
+  height: 35%;
+  border-radius: 200px;
+  display: flex;
+  position: absolute;
+  left: 33%;
+  top: 40%;
 }
 .info_image {
   position: absolute;
   width: 20px;
   right: 10px;
-  top: 10px;
+  top: 33px;
 }
 .chat_user {
   background-color: black;
@@ -179,6 +261,10 @@ body {
 .premium_image {
   filter: blur(30px);
 }
+.premium-video-container {
+  overflow: hidden;
+  border: 1px solid white;
+}
 .post-name {
   margin-top: -28px;
   margin-bottom: 0px;
@@ -193,10 +279,48 @@ body {
   justify-content: center;
 }
 .model-post-img {
-  height: 170px;
+  height: 150px;
+  background-color: brown;
+}
+.img-container {
+  position: relative;
+  width: 100%; /* The size you want */
+}
+.img-container:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%; /* The padding depends on the width, not on the height, so with a padding-bottom of 100% you will get a square */
 }
 .free-img {
-  height: 140px;
+  position: absolute; /* Take your picture out of the flow */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; /* Make the picture taking the size of it's parent */
+  width: 100%; /* This if for the object-fit */
+  height: 100%; /* This if for the object-fit */
+  object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
+  object-position: center;
+}
+.premium-video-container {
+  position: relative;
+  width: 100%; /* The size you want */
+}
+.premium-video-container:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%; /* The padding depends on the width, not on the height, so with a padding-bottom of 100% you will get a square */
+}
+.model-post-video {
+  position: absolute; /* Take your picture out of the flow */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; /* Make the picture taking the size of it's parent */
+  width: 100%; /* This if for the object-fit */
+  height: 100%; /* This if for the object-fit */
+  object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
+  object-position: center;
 }
 .premium-img {
   height: 140px;
@@ -205,6 +329,15 @@ body {
   height: 100px;
 }
 .paginate-block {
+  display: flex;
+  justify-content: center;
+}
+.change-cover {
   position: absolute;
-  bottom: 0;
+  text-align: center;
+  width: 100%;
+  top: 10px;
+  background: black;
+  opacity: 0.6;
+  cursor: pointer;
 }

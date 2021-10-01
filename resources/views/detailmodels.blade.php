@@ -6,8 +6,8 @@
             <img src="{{ asset('image/download (26).png') }}" class="mt-2" alt="">
             <img src="{{ asset('image/download (74).png') }}" class="info_image" alt="">
             <a href="/models">
-                <div class="d-flex justify-content-center image_middle">
-                    <img src="{{ asset('image/download (27).png') }}" class="mt-2 w-25" alt="">
+                <div class="image_middle">
+                    <img src="{{ asset('image/download (27).png') }}" class="w-100" alt="">
                 </div>
             </a>
             <div class="d-flex justify-content-center">{{$model[0]->name}}</div>

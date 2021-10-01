@@ -16,7 +16,7 @@
   @foreach ($premium as $post)
   <div class="col-lg-4 col-6 p-0 text-center img-block p-1">
     <div class="premium-video-container">
-      <video class="model-post-video w-100 p-0 videos" id="{{$post->image_video}}" style="filter: blur(10px)">
+      <video controls class="model-post-video w-100 p-0 videos" id="{{$post->image_video}}" style="filter: blur(10px)">
           <source src="{{asset('storage/uploads/' .$post->image_video. '')}}" type="video/mp4">
       </video>
       <button class="btn btn-warning btn-sm text-light rounded-pill btn_post post-tag">Premium</button>
