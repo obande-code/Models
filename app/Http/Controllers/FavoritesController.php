@@ -32,9 +32,9 @@ class FavoritesController extends Controller
         if (session('accept') == false) {
             return redirect()->route('waitaccept');
         }
-        // $models = DB::table('users')
-        //     ->where('usertype', 'model')
-        //     ->get();
+        $models = DB::table('users')
+            ->where('usertype', 'model')
+            ->get();
         return view('favorites', compact('models'));
     }
     public function add(Request $request) {
