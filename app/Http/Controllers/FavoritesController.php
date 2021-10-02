@@ -42,7 +42,7 @@ class FavoritesController extends Controller
         $validatedData = $request->validate([
             'modelname' => 'required',
         ]);
-        $validatedData = Arr::add($validatedData, 'fanname', $user);
+        // $validatedData = Arr::add($validatedData, 'fanname', $user);
         Favorite::create($validatedData);
         echo "success";
     }
