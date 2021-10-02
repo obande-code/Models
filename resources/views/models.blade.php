@@ -16,10 +16,20 @@
         <div class="row">
             @foreach ($models as $model)
             <div class="col-6 mt-2 d-flex flex-column model_img_mobile">
-                <img src="{{ asset('image/download (26).png') }}" class="mt-2" alt="">
+                @if($model->cover == NULL)
+                <img src="{{ asset('image/download (26).png') }}" class="mt-2 cover-img" alt="">
+                @endif
+                @if($model->cover != NULL)
+                <img src="{{asset('storage/uploads/' .$model->cover. '')}}" class="mt-2 cover-img" alt="">
+                @endif
                 <a href="{{ url('models/' . $model->name) }}">
                     <div class="image_middle">
+                        @if($model->profile == NULL)
                         <img src="{{ asset('image/download (27).png') }}" class="w-100 user-image" alt="">
+                        @endif
+                        @if($model->profile != NULL)
+                        <img src="{{asset('storage/uploads/' .$model->profile. '')}}" class="w-100 user-image" alt="">
+                        @endif
                     </div>
                 </a>
                 <div class="d-flex justify-content-center">{{$model->name}}</div>

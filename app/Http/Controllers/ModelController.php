@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -64,7 +65,7 @@ class ModelController extends Controller
     {
         return view('auth.waitaccept');
     }
-     public function saveprofile(Request $request, Profile $profile)
+    public function saveprofile(Request $request, Profile $profile)
     {
         $validatedData = $request->validate([
                 'description' => 'required',
@@ -76,6 +77,32 @@ class ModelController extends Controller
         $validatedData = Arr::add($validatedData, 'name', $user);
         Profile::where('name', $user)->delete();
         Profile::create($validatedData);
+        return redirect()->route('userprofile');
+    }
+    public function cover(Request $request)
+    {
+        $name = $request->file('cover_img')->getClientOriginalName();
+        $fileName = time() . '_' . $name;
+        $filePath = $request
+            ->file('cover_img')
+            ->storeAs('uploads', $fileName, 'public');
+        $user = Auth::user()->name;
+        $data = DB::table('users')
+                ->where('name', $user)
+               ->update(['cover' => $fileName]);
+        return redirect()->route('userprofile');
+    }
+    public function profileimg(Request $request)
+    {
+        $name = $request->file('user_img')->getClientOriginalName();
+        $fileName = time() . '_' . $name;
+        $filePath = $request
+            ->file('user_img')
+            ->storeAs('uploads', $fileName, 'public');
+        $user = Auth::user()->name;
+        $data = DB::table('users')
+                ->where('name', $user)
+               ->update(['profile' => $fileName]);
         return redirect()->route('userprofile');
     }
 }

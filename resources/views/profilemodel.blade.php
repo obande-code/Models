@@ -3,14 +3,30 @@
 <div class="d-flex justify-content-center flex-wrap">
     <div class=" w-75 d-flex flex-column model_img_mobile">
         <div class="mt-2 d-flex flex-column model_img_mobile position-relative">
-            <input type="file" name="cover_img" style="visibility: hidden; height: 0" id="cover_img">
-            <input type="file" name="user_img" style="visibility: hidden; height: 0" id="user_img">
+            <form method="POST" id="cover" action="{{ route('cover') }}" enctype="multipart/form-data" style="height: 0">
+                @csrf    
+                <input type="file" name="cover_img" onchange="uploadcover()" enctype="multipart/form-data" style="visibility: hidden; height: 0" id="cover_img">
+            </form>
+            <form method="POST" id="profile" action="{{ route('profile') }}" enctype="multipart/form-data" style="height: 0">
+                @csrf   
+                <input type="file" name="user_img" onchange="uploadprofile()" enctype="multipart/form-data" style="visibility: hidden; height: 0" id="user_img">
+            </form>
+            @if($model[0]->cover == NULL)
             <img src="{{ asset('image/download (26).png') }}" class="mt-2" alt="">
+            @endif
+            @if($model[0]->cover != NULL)
+            <img src="{{asset('storage/uploads/' .$model[0]->cover. '')}}" class="mt-2" style="height: 12vw" alt="">
+            @endif
             <img src="{{ asset('image/download (74).png') }}" class="info_image" alt="">
             <p class="change-cover text-light" onclick="changecover()">Change Cover</p>
             <a>
                 <div class="image_middle">
+                    @if($model[0]->profile == NULL)
                     <img src="{{ asset('image/cat5.jpg') }}" class="w-100 user-image" alt="">
+                    @endif
+                    @if($model[0]->profile != NULL)
+                    <img src="{{asset('storage/uploads/' .$model[0]->profile. '')}}" class="w-100 user-image" alt="">
+                    @endif
                     <p class="change-user text-light" onclick="changeuser()">Change<br>Profile</p>
                 </div>
             </a>
@@ -57,6 +73,12 @@
     }
     function changeuser() {
         document.getElementById('user_img').click();
+    }
+    function uploadprofile() {
+        document.getElementById('profile').submit()
+    }
+    function uploadcover() {
+        document.getElementById('cover').submit()
     }
 </script>
 @endsection

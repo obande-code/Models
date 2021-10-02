@@ -133,3 +133,19 @@ Route::get('/fan/signup', [
     App\Http\Controllers\FanController::class,
     'signup',
 ])->name('fansignup');
+Route::post('/cover', [
+    App\Http\Controllers\ModelController::class,
+    'cover',
+])->name('cover');
+Route::post('/profile', [
+    App\Http\Controllers\ModelController::class,
+    'profileimg',
+])->name('profile');
+Route::post('/paid', [
+    App\Http\Controllers\PaidController::class,
+    'paid',
+])->name('paid');
+Route::post('/add-favorite', [
+    App\Http\Controllers\FavoritesController::class,
+    'add',
+])->name('add-favorite');

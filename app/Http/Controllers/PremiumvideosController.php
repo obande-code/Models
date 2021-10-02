@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class PremiumvideosController extends Controller
 {
@@ -29,12 +30,20 @@ class PremiumvideosController extends Controller
         if (session('accept') == false) {
             return redirect()->route('waitaccept');
         }
+        $user = Auth::user()->name;
         $premium = DB::table('posts')
             ->where('type', 'Premium')
             ->get();
+        $paids = DB::table('paids')
+            ->where('name', $user)
+            ->get();
+        $models = DB::table('users')
+            ->where('usertype', 'model')
+            ->get();
         $premium = json_decode($premium);
         shuffle($premium);
-        return view('premiumvideos', compact('premium'));
+        // print_r(json_decode($paids));
+        return view('premiumvideos', compact('premium'), compact('models'))->with('paids', json_decode($paids));
     }
     public function search(Request $request)
     {
@@ -54,6 +63,7 @@ class PremiumvideosController extends Controller
         }
         $premium = json_decode($premium);
         shuffle($premium);
+        $username = Auth::user()->name;
         return view('premiumvideos', compact('premium'));
     }
 }

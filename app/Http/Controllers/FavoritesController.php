@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
+use App\Models\Favorite;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class FavoritesController extends Controller
 {
@@ -33,5 +36,14 @@ class FavoritesController extends Controller
             ->where('usertype', 'model')
             ->get();
         return view('favorites', compact('models'));
+    }
+    public function add(Request $request) {
+        $user = Auth::user()->name;
+        $validatedData = $request->validate([
+            'modelname' => 'required',
+        ]);
+        $validatedData = Arr::add($validatedData, 'fanname', $user);
+        Favorite::create($validatedData);
+        echo "success";
     }
 }

@@ -3,36 +3,50 @@
 <div class="d-flex justify-content-center flex-wrap">
     <div class=" w-75 d-flex flex-column model_img_mobile">
         <div class="mt-2 d-flex flex-column model_img_mobile position-relative">
-            <img src="{{ asset('image/download (26).png') }}" class="mt-2" alt="">
-            <img src="{{ asset('image/download (74).png') }}" class="info_image" alt="">
-            <a href="/models">
-                <div class="image_middle">
-                    <img src="{{ asset('image/download (27).png') }}" class="w-100" alt="">
-                </div>
-            </a>
-            <div class="d-flex justify-content-center">{{$model[0]->name}}</div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content" style="margin-top: 20%; width: 95%; margin-left: -4%;">
-                    <div class="modal-body d-flex flex-column justify-content-center">
-                        <div class="d-flex justify-content-center">Miyuki Kurigawa</div>
-                        <div class="d-flex justify-content-center">Japanese</div>
-                        <div class="d-flex justify-content-center">24 y/o</div>
-                        <div class="d-flex justify-content-center">Fitness Coach | Model | Actress</div>
-                        <div class="d-flex justify-content-center">https://www.facebook.com/miyukikuragawi/</div>
-                        <div class="d-flex justify-content-center">https://www.instagram.com/miyukikuragawi/</div>
-                        <div class="d-flex justify-content-center mt-4">
-                            <a class="btn btn-success w-25">ok</a>
+            <!-- Modal -->
+            <button type="button" class="btn-modal" data-toggle="modal" data-target="#exampleModal" id="modalbutton">
+                Launch demo modal
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body d-flex flex-column justify-content-center">
+                            <div class="d-flex justify-content-center">Miyuki Kurigawa</div>
+                            <div class="d-flex justify-content-center">Japanese</div>
+                            <div class="d-flex justify-content-center">24 y/o</div>
+                            <div class="d-flex justify-content-center">Fitness Coach | Model | Actress</div>
+                            <div class="d-flex justify-content-center">https://www.facebook.com/miyukikuragawi/</div>
+                            <div class="d-flex justify-content-center">https://www.instagram.com/miyukikuragawi/</div>
+                            <div class="d-flex justify-content-center mt-4">
+                                <button class="btn btn-success w-25" data-dismiss="modal">ok</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            @if($model[0]->cover == NULL)
+            <img src="{{ asset('image/download(2).jpg') }}" class="mt-1 model-cover" alt="">
+            @endif
+            @if($model[0]->cover != NULL)
+            <img src="{{asset('storage/uploads/' .$model[0]->cover. '')}}" class="mt-1 model-cover" alt="">
+            @endif
+            <img src="{{ asset('image/download (74).png') }}" class="model_info_image" onmouseover="infoshow()" alt="">
+            <a href="/models">
+                <div class="image_middle">
+                    @if($model[0]->profile == NULL)
+                    <img src="{{ asset('image/cat5.jpg') }}" class="w-100 user-image" alt="">
+                    @endif
+                    @if($model[0]->profile != NULL)
+                    <img src="{{asset('storage/uploads/' .$model[0]->profile. '')}}" class="w-100 user-image" alt="">
+                    @endif
+                </div>
+            </a>
+            <div class="d-flex justify-content-center">{{$model[0]->name}}</div>
         </div>
+        
         <div class="d-flex mt-1">
             <button class="btn rounded-pill btn-outline-danger btn-sm btn-subscribe mx-1" onclick="subscribe()">Subscribe</button>
-            <img src="{{ asset('image/download (71).png') }}" class="mx-2 heart-img" alt="">
+            <img src="{{ asset('image/download (71).png') }}" onclick="favorite('{{$model[0]->name}}')" class="mx-2 heart-img" alt="">
             <a class="mx-1" href="{{ url('models/' . $model[0]->name.'/chat') }}">
                 <img src="{{ asset('image/download (37).png') }}" class="chat-img" alt="">
             </a>
@@ -73,6 +87,23 @@
         for (let index = 0; index < subscribes.length; index++) {
             subscribes[index].style.filter = 'blur(0)';
         }
+    }
+    function infoshow() {
+        document.getElementById('modalbutton').click();
+    }
+    function favorite(value) {
+        $(document).ready(function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.post("/add-favorite", {
+                modelname: value
+            }, function(result) {
+                console.log(result);
+            });
+        });
     }
 </script>
 @endsection

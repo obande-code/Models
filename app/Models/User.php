@@ -28,6 +28,8 @@ class User extends Authenticatable
         'referralcode',
         'usertype',
         'isaccept',
+        'profile',
+        'cover'
     ];
 
     /**

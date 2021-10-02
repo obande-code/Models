@@ -13,26 +13,92 @@
     </form>
   </div>
   <div class=" w-75 d-flex model_img_mobile mt-3 row">
-  @foreach ($premium as $post)
-  <div class="col-lg-4 col-6 p-0 text-center img-block p-1">
-    <div class="premium-video-container">
-      <video onclick="videoclick(event)" class="model-post-video w-100 p-0 videos" id="{{$post->image_video}}" style="filter: blur(10px)">
-          <source src="{{asset('storage/uploads/' .$post->image_video. '')}}" type="video/mp4">
-      </video>
-      <button class="btn btn-warning btn-sm text-light rounded-pill btn_post post-tag">Premium</button>
-      <p class="post-amount text-light">{{$post->amount}}</p>
-      <p class="post-description text-light">{{$post->description}}</p>
-      <p class="post-username text-light">{{$post->username}}</p>
-      <div class="post-duration text-light times">
-        <span class="duration-span" id="{{$post->image_video . 'time'}}"></span>
+    <div class="col-12">Paid</div>
+    @foreach ($premium as $post)
+    @foreach ($paids as $paid)
+    @if($paid->premiumvideo == $post->image_video)
+    <div class="col-lg-4 col-6 p-0 text-center img-block p-1">
+      <div class="premium-video-container">
+        <video onclick="videoclick(event)" class="model-post-video w-100 p-0 videos" id="{{$post->image_video}}">
+            <source src="{{asset('storage/uploads/' .$post->image_video. '')}}" type="video/mp4">
+        </video>
+        <button class="btn btn-warning btn-sm text-light rounded-pill btn_post post-tag">Premium</button>
+        <p class="post-amount text-light">{{$post->amount}}</p>
+        <p class="post-description text-light">{{$post->description}}</p>
+        <p class="post-username text-light">{{$post->username}}</p>
+        <div class="post-duration text-light times">
+          <span class="duration-span" id="{{$post->image_video . 'time'}}"></span>
+        </div>
+      </div>
+      <div class="post-user-image" id="{{$post->image_video . 'img'}}">
+        @foreach($models as $model)
+          @if($model->name == $post->username)
+          <img src="{{asset('storage/uploads/' .$model->profile. '')}}" alt="" class="w-100">
+          @endif
+        @endforeach
       </div>
     </div>
-    <div class="post-user-image" onclick="payclick(event)" id="{{$post->image_video . 'img'}}">
-      <img src="{{asset('image/cat7.jpg')}}" alt="" class="">
+    @endif
+    @endforeach
+    @endforeach
+  </div>
+  <div class=" w-75 d-flex model_img_mobile mt-3 row">
+    <div class="col-12">Others</div>
+    @foreach ($premium as $post)
+    @if(sizeof($paids) > 0)
+    @if(array_search($post->image_video, array_column($paids, 'premiumvideo')))
+    <div></div>
+    @elseif($post->image_video == $paids[0]->premiumvideo)
+    <div></div>
+    @else
+    <div class="col-lg-4 col-6 p-0 text-center img-block p-1">
+      <div class="premium-video-container">
+        <video onclick="videoclick(event)" class="model-post-video w-100 p-0 videos" id="{{$post->image_video}}" style="filter: blur(10px)">
+            <source src="{{asset('storage/uploads/' .$post->image_video. '')}}" type="video/mp4">
+        </video>
+        <button class="btn btn-warning btn-sm text-light rounded-pill btn_post post-tag">Premium</button>
+        <p class="post-amount text-light">{{$post->amount}}</p>
+        <p class="post-description text-light">{{$post->description}}</p>
+        <p class="post-username text-light">{{$post->username}}</p>
+        <div class="post-duration text-light times">
+          <span class="duration-span" id="{{$post->image_video . 'time'}}"></span>
+        </div>
+      </div>
+      <div class="post-user-image" id="{{$post->image_video . 'img'}}">
+        @foreach($models as $model)
+          @if($model->name == $post->username)
+          <img src="{{asset('storage/uploads/' .$model->profile. '')}}" alt="" class="w-100">
+          @endif
+        @endforeach
+      </div>
     </div>
+    @endif
+    @else
+    <div class="col-lg-4 col-6 p-0 text-center img-block p-1">
+      <div class="premium-video-container">
+        <video onclick="videoclick(event)" class="model-post-video w-100 p-0 videos" id="{{$post->image_video}}" style="filter: blur(10px)">
+            <source src="{{asset('storage/uploads/' .$post->image_video. '')}}" type="video/mp4">
+        </video>
+        <button class="btn btn-warning btn-sm text-light rounded-pill btn_post post-tag">Premium</button>
+        <p class="post-amount text-light">{{$post->amount}}</p>
+        <p class="post-description text-light">{{$post->description}}</p>
+        <p class="post-username text-light">{{$post->username}}</p>
+        <div class="post-duration text-light times">
+          <span class="duration-span" id="{{$post->image_video . 'time'}}"></span>
+        </div>
+      </div>
+      <div class="post-user-image" id="{{$post->image_video . 'img'}}">
+        @foreach($models as $model)
+          @if($model->name == $post->username)
+          <img src="{{asset('storage/uploads/' .$model->profile. '')}}" alt="" class="w-100">
+          @endif
+        @endforeach
+      </div>
+    </div>
+    @endif
+    @endforeach
   </div>
-  @endforeach
-  </div>
+  
   <div class="modal fade" id="confirmDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
           <div class="modal-content">
@@ -74,10 +140,20 @@ document.onreadystatechange = function () {
 }
 function payclick(event) {
   let selectvideo = localStorage.getItem("selectvideo");
-  document.getElementById(selectvideo).style.filter = 'blur(0px)';
+  $(document).ready(function() {
+      $.ajaxSetup({
+          headers: {
+              'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+          }
+      });
+      $.post("/paid", {
+          premiumvideo: selectvideo
+      }, function(result) {
+          window.location.href = '/premiumvideos';
+      });
+  });
 }
 function videoclick(event) {
-  console.log(event.currentTarget.style.filter)
   let blur = event.currentTarget.style.filter;
   if (blur != 'blur(10px)') {
     event.currentTarget.controls = true;
