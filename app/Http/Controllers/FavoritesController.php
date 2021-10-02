@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Favorite;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
@@ -32,9 +33,14 @@ class FavoritesController extends Controller
         if (session('accept') == false) {
             return redirect()->route('waitaccept');
         }
-        $models = DB::table('users')
-            ->where('usertype', 'model')
-            ->get();
+        $user = Auth::user()->name;
+        // $models = DB::table('users')
+        //     ->where('usertype', 'model')
+        //     ->get();
+        $models = User::join('favorites', 'favorites.modelname', '=', 'users.name')
+            ->where('favorites.fanname', $user)
+            ->where('users.usertype', 'model')
+            ->get(['users.*']);
         return view('favorites', compact('models'));
     }
     public function add(Request $request) {
