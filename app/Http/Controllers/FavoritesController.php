@@ -38,12 +38,12 @@ class FavoritesController extends Controller
         return view('favorites', compact('models'));
     }
     public function add(Request $request) {
-        $user = Auth::user()->name;
-        $validatedData = $request->validate([
-            'modelname' => 'required',
-        ]);
-        $validatedData = Arr::add($validatedData, 'fanname', $user);
-        Favorite::create($validatedData);
+        // $user = Auth::user()->name;
+        // $validatedData = $request->validate([
+        //     'modelname' => 'required',
+        // ]);
+        // $validatedData = Arr::add($validatedData, 'fanname', $user);
+        // Favorite::create($validatedData);
         echo "success";
     }
 }
