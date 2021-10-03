@@ -36,9 +36,9 @@ class NewpostController extends Controller
         }
         $name = $request->file('image_video')->getClientOriginalName();
         $fileName = time() . '_' . $name;
-        $filePath = $request
-            ->file('image_video')
-            ->storeAs('uploads', $fileName, 'public');
+        // $filePath = $request
+        //     ->file('image_video')
+        //     ->storeAs('uploads', $fileName, 'public');
         $request->image_video = $fileName;
         if ($request->type == 'Free' || $request->type == 'Subscriber') {
             $validatedData = $request->validate([
