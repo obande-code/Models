@@ -16,7 +16,7 @@
     <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="{{ asset('dashboard/dashboard.css') }}" rel="stylesheet">
-
+    
 </head>
 
 <body>
@@ -31,7 +31,7 @@
     <script src="{{ asset('dashboard/bootstrap.bundle.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
-
+    <script src="{{ asset('dashboard/dashboard.js') }}"></script>
     @yield('script')
 
     <!-- <script src="dashboard.js"></script> -->

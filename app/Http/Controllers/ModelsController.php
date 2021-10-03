@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ModelsController extends Controller
 {
@@ -41,17 +42,22 @@ class ModelsController extends Controller
         if (session('accept') == false) {
             return redirect()->route('waitaccept');
         }
+        $user = Auth::user()->name;
         $posts = DB::table('posts')
             ->where('username', $name)
             ->get();
         $model = DB::table('users')
             ->where('name', $name)
             ->get();
+        $favorite = DB::table('favorites')
+            ->where('modelname', $name)
+            ->where('fanname', $user)
+            ->get();
         return view(
             'detailmodels',
             ['model' => json_decode($model)],
             ['posts' => json_decode($posts)]
-        );
+        )->with('favorite', json_decode($favorite));
     }
     public function chat()
     {

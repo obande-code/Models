@@ -41,7 +41,7 @@
             class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse w-75">
             <ul class="nav flex-column mt-5">
                 <li class="nav-item mb-3 ml-3">
-                    <a class="nav-link text-white" href="/">
+                    <a class="nav-link text-white" href="/" id="home">
                         <span><img src="{{ asset('image/download (67).png') }}" id="tickets_icon" style="width: 25px"
                                 alt="Kiwi standing on oval"></span>
                         <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Home</span>
@@ -49,21 +49,21 @@
                 </li>
                 @if(session('usertype') == 'model')
                 <li class="nav-item mb-3 ml-3">
-                    <a class="nav-link text-white" href="/">
+                    <a class="nav-link text-white" href="/dashboardpage" id="dashboard">
                         <span><img src="{{ asset('image/download (76).png') }}" id="tickets_icon" style="width: 25px"
                                 alt="Kiwi standing on oval"></span>
                         <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item mb-3 ml-3">
-                    <a class="nav-link text-white" href="/">
+                    <a class="nav-link text-white" href="/analytics" id="analytics">
                         <span><img src="{{ asset('image/download (75).png') }}" id="tickets_icon" style="width: 25px"
                                 alt="Kiwi standing on oval"></span>
                         <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Analytics</span>
                     </a>
                 </li>
                 <li class="nav-item mb-3 ml-3">
-                    <a class="nav-link text-white" href="/managepost">
+                    <a class="nav-link text-white" href="/managepost" id="managepost">
                         <span><img src="{{ asset('image/download (81).png') }}" id="tickets_icon" style="width: 25px"
                                 alt="Kiwi standing on oval"></span>
                         <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Manage Posts</span>
@@ -72,7 +72,7 @@
                 @endif
                 @if(session('usertype') == 'admin')
                 <li class="nav-item mb-3 ml-3">
-                    <a class="nav-link text-white" href="/modelmanagement">
+                    <a class="nav-link text-white" href="/modelmanagement" id="modelmanagement">
                         <span><img src="{{ asset('image/download (81).png') }}" id="tickets_icon" style="width: 25px"
                                 alt="Kiwi standing on oval"></span>
                         <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Model Management</span>
@@ -80,28 +80,28 @@
                 </li>
                 @endif
                 <li class="nav-item mb-3 ml-3">
-                    <a class="nav-link text-white" href="/">
+                    <a class="nav-link text-white" href="/chats" id="chats">
                         <span><img src="{{ asset('image/download (77).png') }}" id="tickets_icon" style="width: 25px"
                                 alt="Kiwi standing on oval"></span>
                         <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Chats</span>
                     </a>
                 </li>
                 <li class="nav-item mb-3 ml-3">
-                    <a class="nav-link text-white" href="/models">
+                    <a class="nav-link text-white" href="/models" id="models">
                         <span><img src="{{ asset('image/download (20).png') }}" id="tickets_icon" style="width: 25px"
                                 alt="Kiwi standing on oval"></span>
                         <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Models</span>
                     </a>
                 </li>
                 <li class="nav-item mb-3 ml-3">
-                    <a class="nav-link text-white" href="/premiumvideos">
+                    <a class="nav-link text-white" href="/premiumvideos" id="premiumvideo">
                         <span><img src="{{ asset('image/download (21).png') }}" id="tickets_icon" style="width: 25px"
                                 alt="Kiwi standing on oval"></span>
                         <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Premium Videos</span>
                     </a>
                 </li>
                 <li class="nav-item mb-3 ml-3">
-                    <a class="nav-link text-white" href="/livenow">
+                    <a class="nav-link text-white" href="/livenow" id="livenow">
                         <span><img src="{{ asset('image/download (66).png') }}" id="tickets_icon" style="width: 25px"
                                 alt="Kiwi standing on oval"></span>
                         <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Live Now</span>
@@ -109,14 +109,14 @@
                 </li>
                 @if(session('usertype') == 'fan')
                 <li class="nav-item mb-3 ml-3">
-                    <a class="nav-link text-white" href="/explore">
+                    <a class="nav-link text-white" href="/explore" id="explore">
                         <span><img src="{{ asset('image/download (68).png') }}" id="tickets_icon" style="width: 25px"
                                 alt="Kiwi standing on oval"></span>
                         <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Explore</span>
                     </a>
                 </li>
                 <li class="nav-item mb-3 ml-3">
-                    <a class="nav-link text-white" href="/favorites">
+                    <a class="nav-link text-white" href="/favorites" id="favorites">
                         <span><img src="{{ asset('image/download (22).png') }}" id="tickets_icon" style="width: 25px"
                                 alt="Kiwi standing on oval"></span>
                         <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Favorites</span>
@@ -124,7 +124,7 @@
                 </li>
                 @endif
                 <li class="nav-item mb-3 ml-3">
-                    <a class="nav-link text-white" href="/blogs">
+                    <a class="nav-link text-white" href="/blogs" id="blogs">
                         <span><img src="{{ asset('image/download (23).png') }}" id="tickets_icon" style="width: 25px"
                                 alt="Kiwi standing on oval"></span>
                         <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Blogs</span>
@@ -132,14 +132,14 @@
                 </li>
                 @if(session('usertype') == 'fan')
                 <li class="nav-item mb-3 ml-3">
-                    <a class="nav-link text-white" href="/contactus">
+                    <a class="nav-link text-white" href="/contactus" id="contactus">
                         <span><img src="{{ asset('image/download (24).png') }}" id="tickets_icon" style="width: 25px"
                                 alt="Kiwi standing on oval"></span>
                         <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Contact Us</span>
                     </a>
                 </li>
                 <li class="nav-item mb-3 ml-3">
-                    <a class="nav-link text-white" href="/faqs">
+                    <a class="nav-link text-white" href="/faqs" id="faqs">
                         <span><img src="{{ asset('image/download (25).png') }}" id="tickets_icon" style="width: 25px"
                                 alt="Kiwi standing on oval"></span>
                         <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">FAQs</span>

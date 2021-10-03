@@ -46,7 +46,12 @@
         
         <div class="d-flex mt-1">
             <button class="btn rounded-pill btn-outline-danger btn-sm btn-subscribe mx-1" onclick="subscribe()">Subscribe</button>
-            <img src="{{ asset('image/download (71).png') }}" onclick="favorite('{{$model[0]->name}}')" class="mx-2 heart-img" alt="">
+            @if(sizeof($favorite) > 0)
+            <img src="{{ asset('image/download (72).png') }}"  onclick="removefavorite('{{$model[0]->name}}')" class="mx-2 heart-img" alt="">
+            @endif
+            @if(sizeof($favorite) == 0)
+            <img src="{{ asset('image/download (71).png') }}"  onclick="addfavorite('{{$model[0]->name}}')" class="mx-2 heart-img" alt="">
+            @endif
             <a class="mx-1" href="{{ url('models/' . $model[0]->name.'/chat') }}">
                 <img src="{{ asset('image/download (37).png') }}" class="chat-img" alt="">
             </a>
@@ -91,7 +96,7 @@
     function infoshow() {
         document.getElementById('modalbutton').click();
     }
-    function favorite(value) {
+    function addfavorite(value) {
         $(document).ready(function() {
             $.ajaxSetup({
                 headers: {
@@ -101,7 +106,21 @@
             $.post("/add-favorite", {
                 modelname: value
             }, function(result) {
-                console.log(result);
+                location.reload();
+            });
+        });
+    }
+    function removefavorite(value) {
+        $(document).ready(function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.post("/remove-favorite", {
+                modelname: value
+            }, function(result) {
+                location.reload();
             });
         });
     }

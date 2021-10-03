@@ -119,23 +119,7 @@
 <script>
 document.onreadystatechange = function () {
   if (document.readyState === 'complete') {
-    let videos = document.getElementsByTagName('video');
-    for (let index = 0; index < videos.length; index++) {
-      const element = videos[index];
-      if (element.duration) {
-        let m1 = parseInt(element.duration/600);
-        let m2 = parseInt(element.duration/60);
-        let s1 = parseInt(element.duration%60/10);
-        let s2 = parseInt(element.duration%60%10);
-        document.getElementById(element.id+'time').innerHTML  = m1.toString()+m2.toString()+':'+s1.toString()+s2.toString();
-      }
-      else {
-        let m1 = Math.floor(Math.random() * 5);
-        let m2 = Math.floor(Math.random() * 10);
-        let s1 = Math.floor(Math.random() * 5);
-        let s2 = Math.floor(Math.random() * 10);document.getElementById(element.id+'time').innerHTML  = m1.toString()+m2.toString()+':'+s1.toString()+s2.toString();
-      }
-    }
+    
   }
 }
 function payclick(event) {

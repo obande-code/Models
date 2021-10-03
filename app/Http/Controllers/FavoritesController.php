@@ -34,9 +34,6 @@ class FavoritesController extends Controller
             return redirect()->route('waitaccept');
         }
         $user = Auth::user()->name;
-        // $models = DB::table('users')
-        //     ->where('usertype', 'model')
-        //     ->get();
         $models = User::join('favorites', 'favorites.modelname', '=', 'users.name')
             ->where('favorites.fanname', $user)
             ->where('users.usertype', 'model')
@@ -50,6 +47,14 @@ class FavoritesController extends Controller
         ]);
         $validatedData = Arr::add($validatedData, 'fanname', $user);
         Favorite::create($validatedData);
+        echo "success";
+    }
+    public function remove(Request $request) {
+        $user = Auth::user()->name;
+        $favorite = DB::table('favorites')
+            ->where('fanname', $user)
+            ->where('modelname', $request->modelname)
+            ->delete();
         echo "success";
     }
 }

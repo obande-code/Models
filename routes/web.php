@@ -21,6 +21,18 @@ Route::get('/home', [
     App\Http\Controllers\HomeController::class,
     'index',
 ])->name('home');
+Route::get('/chats', [
+    App\Http\Controllers\HomeController::class,
+    'index',
+])->name('chats');
+Route::get('/dashboardpage', [
+    App\Http\Controllers\HomeController::class,
+    'index',
+])->name('dashboardpage');
+Route::get('/analytics', [
+    App\Http\Controllers\HomeController::class,
+    'index',
+])->name('analytics');
 Route::get('/logout', [
     App\Http\Controllers\Auth\LoginController::class,
     'logout',
@@ -149,3 +161,7 @@ Route::post('/add-favorite', [
     App\Http\Controllers\FavoritesController::class,
     'add',
 ])->name('add-favorite');
+Route::post('/remove-favorite', [
+    App\Http\Controllers\FavoritesController::class,
+    'remove',
+])->name('remove-favorite');
