@@ -56,9 +56,9 @@ class ModelController extends Controller
         $user = DB::table('users')
             ->where('name', $username)
             ->get();
-        $profile = DB::table('profiles')
-            ->where('name', $username)
-            ->get();
+        // $profile = DB::table('profiles')
+        //     ->where('name', $username)
+        //     ->get();
         return view('editprofile',['user' => json_decode($user)], ['profile' => json_decode($profile)]);
     }
     public function waitaccept()
