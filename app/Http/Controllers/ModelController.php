@@ -67,12 +67,12 @@ class ModelController extends Controller
     }
     public function saveprofile(Request $request, Profile $profile)
     {
-        // $validatedData = $request->validate([
-        //         'description' => 'required',
-        //         'facebook' => 'required',
-        //         'instagram' => 'required',
-        //         'subscriptionfee' => 'required',
-        //     ]);
+        $validatedData = $request->validate([
+                'description' => 'required',
+                'facebook' => 'required',
+                'instagram' => 'required',
+                'subscriptionfee' => 'required',
+            ]);
         $user = Auth::user()->name;
         $validatedData = Arr::add($validatedData, 'name', $user);
         Profile::where('name', $user)->delete();
