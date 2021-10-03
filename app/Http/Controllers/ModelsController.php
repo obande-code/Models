@@ -32,9 +32,9 @@ class ModelsController extends Controller
         if (session('accept') == false) {
             return redirect()->route('waitaccept');
         }
-        $models = DB::table('users')
-            ->where('usertype', 'model')
-            ->get();
+        // $models = DB::table('users')
+        //     ->where('usertype', 'model')
+        //     ->get();
         return view('models', compact('models'));
     }
     public function detail($name)
