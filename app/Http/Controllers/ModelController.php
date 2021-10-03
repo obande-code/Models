@@ -99,10 +99,10 @@ class ModelController extends Controller
         $filePath = $request
             ->file('user_img')
             ->storeAs('uploads', $fileName, 'public');
-        // $user = Auth::user()->name;
-        // $data = DB::table('users')
-        //         ->where('name', $user)
-        //        ->update(['profile' => $fileName]);
+        $user = Auth::user()->name;
+        $data = DB::table('users')
+                ->where('name', $user)
+               ->update(['profile' => $fileName]);
         return redirect()->route('userprofile');
     }
 }
