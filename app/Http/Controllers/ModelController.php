@@ -81,15 +81,15 @@ class ModelController extends Controller
     }
     public function cover(Request $request)
     {
-        $name = $request->file('cover_img')->getClientOriginalName();
-        $fileName = time() . '_' . $name;
-        $filePath = $request
-            ->file('cover_img')
-            ->storeAs('uploads', $fileName, 'public');
-        $user = Auth::user()->name;
-        $data = DB::table('users')
-                ->where('name', $user)
-               ->update(['cover' => $fileName]);
+        // $name = $request->file('cover_img')->getClientOriginalName();
+        // $fileName = time() . '_' . $name;
+        // $filePath = $request
+        //     ->file('cover_img')
+        //     ->storeAs('uploads', $fileName, 'public');
+        // $user = Auth::user()->name;
+        // $data = DB::table('users')
+        //         ->where('name', $user)
+        //        ->update(['cover' => $fileName]);
         return redirect()->route('userprofile');
     }
     public function profileimg(Request $request)
