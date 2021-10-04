@@ -59,10 +59,10 @@ class AdminController extends Controller
         $filePath = $request
             ->file('image_video')
             ->storeAs('uploads', $fileName, 'public');
-        $request->image_video = $fileName;
-        $validatedData = $request->validate([
-            'description' => 'required',
-        ]);
+        // $request->image_video = $fileName;
+        // $validatedData = $request->validate([
+        //     'description' => 'required',
+        // ]);
         $validatedData = Arr::add($validatedData, 'path', $fileName);
         Banner::create($validatedData);
         return redirect()->route('bannermanagement');
