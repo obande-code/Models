@@ -54,11 +54,11 @@ class AdminController extends Controller
     }
     public function addnewbanner(Request $request)
     {
-        // $name = $request->file('image_video')->getClientOriginalName();
-        // $fileName = time() . '_' . $name;
-        // $filePath = $request
-        //     ->file('image_video')
-        //     ->storeAs('uploads', $fileName, 'public');
+        $name = $request->file('image_video')->getClientOriginalName();
+        $fileName = time() . '_' . $name;
+        $filePath = $request
+            ->file('image_video')
+            ->storeAs('uploads', $fileName, 'public');
         $request->image_video = $fileName;
         $validatedData = $request->validate([
             'description' => 'required',
