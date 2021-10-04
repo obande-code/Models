@@ -13,9 +13,9 @@ class AdminController extends Controller
 {
     public function model()
     {
-        // $models = DB::table('users')
-        //     ->where('usertype', 'model')
-        //     ->get();
+        $models = DB::table('users')
+            ->where('usertype', 'model')
+            ->get();
         return view('modellist', compact('models'));
     }
     public function accept(Request $request)
