@@ -3,33 +3,54 @@
 @endsection
 @section('mainContent')
 <div class="d-flex justify-content-center flex-wrap">
-    <img src="{{ asset('image/download (65).png') }}" class="w-75 maincontent_img" alt="">
-    <div class="w-75 d-flex mt-3 justify-content-between models_round_img_container">
-        <div class="mx-1">
-            <img src="{{ asset('image/download (10).png') }}" class="model_round_img" alt="">
-            <div class="d-flex justify-content-center">Miyuki</div>
-        </div>
-        <div class="mx-1">
-            <img src="{{ asset('image/download (11).png') }}" class="model_round_img" alt="">
-            <div class="d-flex justify-content-center">
-                Rachel Cruz
+    <div id="carouselExampleInterval" class="carousel slide w-75 maincontent_img" data-ride="carousel">
+        <ol class="carousel-indicators">
+            @foreach($banners as $banner)
+            @if($banner == $banners[0])
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            @else
+            <li data-target="#myCarousel" data-slide-to="{{$loop->index}}"></li>
+            @endif
+            @endforeach
+        </ol>    
+        <div class="carousel-inner">
+            
+            @foreach($banners as $banner)
+            @if($banner == $banners[0])
+            <div class="carousel-item active" data-interval="3000">
+                <img src="{{asset('storage/uploads/' .$banner->path. '')}}" class="d-block carousel-img w-100" alt="...">
             </div>
-        </div>
-        <div class="mx-1">
-            <img src="{{ asset('image/download (12).png') }}" class="model_round_img" alt="">
-            <div class="d-flex justify-content-center">Jenny Choy</div>
-        </div>
-        <div class="mx-1">
-            <img src="{{ asset('image/download (13).png') }}" class="model_round_img" alt="">
-            <div class="d-flex justify-content-center">Rachel Cruz</div>
-        </div>
-        <div class="mx-1">
-            <img src="{{ asset('image/download (14).png') }}" class="model_round_img" alt="">
-            <div class="d-flex justify-content-center">Miyuki </div>
+            @else
+            <div class="carousel-item" data-interval="3000">
+                <img src="{{asset('storage/uploads/' .$banner->path. '')}}" class="d-block carousel-img w-100" alt="...">
+            </div>
+            @endif
+            @endforeach
         </div>
     </div>
-    <img src="{{ asset('image/download (15).png') }}" class="w-75 mt-3 px-3 maincontent_img" alt="">
-    <img src="{{ asset('image/download (15).png') }}" class="w-75 mt-3 px-3 maincontent_img" alt="">
+    <div class="w-75 d-flex mt-3 justify-content-around models_round_img_container">
+        @foreach($models as $model)
+        <div class="mx-3 w-25">
+            <div class="round-img-container">
+                @if($model->profile != NULL)
+                <img src="{{asset('storage/uploads/' .$model->profile. '')}}" class="round-img" alt="">
+                @endif
+                @if($model->profile == NULL)
+                <img src="{{ asset('image/download (10).png') }}" class="round-img" alt="">
+                @endif
+            </div>
+            <div class="d-flex justify-content-center">
+            {{$model->name}}
+            </div>
+        </div>
+        @endforeach
+    </div>
+    @foreach($advertisements as $advertisement)
+    <div class="advertise">
+        <p class="advertise-title">{{$advertisement->description}}</p>
+        <img src="{{asset('storage/uploads/' .$advertisement->path. '')}}" class="w-100 px-1 maincontent_img" alt="">
+    </div>
+    @endforeach
 </div>
 @endsection
 @section('script')

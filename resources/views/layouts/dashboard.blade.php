@@ -75,7 +75,35 @@
                     <a class="nav-link text-white" href="/modelmanagement" id="modelmanagement">
                         <span><img src="{{ asset('image/download (81).png') }}" id="tickets_icon" style="width: 25px"
                                 alt="Kiwi standing on oval"></span>
-                        <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Model Management</span>
+                        <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Manage Model</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3 ml-3">
+                    <a class="nav-link text-white" href="/bannermanagement" id="bannermanagement">
+                        <span><img src="{{ asset('image/download (81).png') }}" id="tickets_icon" style="width: 25px"
+                                alt="Kiwi standing on oval"></span>
+                        <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Manage Banners</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3 ml-3">
+                    <a class="nav-link text-white" href="/advertisemanagement" id="advertisemanagement">
+                        <span><img src="{{ asset('image/download (81).png') }}" id="tickets_icon" style="width: 25px"
+                                alt="Kiwi standing on oval"></span>
+                        <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Manage Advertisement</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3 ml-3">
+                    <a class="nav-link text-white" href="/blogsmanagement" id="blogsmanagement">
+                        <span><img src="{{ asset('image/download (81).png') }}" id="tickets_icon" style="width: 25px"
+                                alt="Kiwi standing on oval"></span>
+                        <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Manage Blogs</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3 ml-3">
+                    <a class="nav-link text-white" href="/faqsmanagement" id="faqsmanagement">
+                        <span><img src="{{ asset('image/download (81).png') }}" id="tickets_icon" style="width: 25px"
+                                alt="Kiwi standing on oval"></span>
+                        <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Manage FAQs</span>
                     </a>
                 </li>
                 @endif
@@ -176,72 +204,6 @@
                             </div>
                             <input type="text" class="form-control border-left-0" placeholder="Search for Conversation"
                                 aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="d-flex mt-2">
-                            <img src="{{ asset('image/download (10).png') }}" style="width: 50px" alt="">
-                            <div class="d-flex flex-column justify-content-center ml-2">
-                                <div>Miyuki Kurigawa</div>
-                            </div>
-                        </div>
-                        <div class="d-flex mt-2">
-                            <img src="{{ asset('image/download (11).png') }}" style="width: 50px" alt="">
-                            <div class="d-flex flex-column justify-content-center ml-2">
-                                <div>Rachel Cruz</div>
-                            </div>
-                        </div>
-                        <div class="d-flex mt-2">
-                            <img src="{{ asset('image/download (12).png') }}" style="width: 50px" alt="">
-                            <div class="d-flex flex-column justify-content-center ml-2">
-                                <div>Jenny Choy</div>
-                            </div>
-                        </div>
-                        <div class="d-flex mt-2">
-                            <img src="{{ asset('image/download (13).png') }}" style="width: 50px" alt="">
-                            <div class="d-flex flex-column justify-content-center ml-2">
-                                <div>Miyuki Kurigawa</div>
-                            </div>
-                        </div>
-                        <div class="d-flex mt-2">
-                            <img src="{{ asset('image/download (14).png') }}" style="width: 50px" alt="">
-                            <div class="d-flex flex-column justify-content-center ml-2">
-                                <div>Rachel Cruz</div>
-                            </div>
-                        </div>
-                        <div class="d-flex mt-2">
-                            <img src="{{ asset('image/download (12).png') }}" style="width: 50px" alt="">
-                            <div class="d-flex flex-column justify-content-center ml-2">
-                                <div>Jenny Choy</div>
-                            </div>
-                        </div>
-                        <div class="d-flex mt-2">
-                            <img src="{{ asset('image/download (13).png') }}" style="width: 50px" alt="">
-                            <div class="d-flex flex-column justify-content-center ml-2">
-                                <div>Miyuki Kurigawa</div>
-                            </div>
-                        </div>
-                        <div class="d-flex mt-2">
-                            <img src="{{ asset('image/download (14).png') }}" style="width: 50px" alt="">
-                            <div class="d-flex flex-column justify-content-center ml-2">
-                                <div>Rachel Cruz</div>
-                            </div>
-                        </div>
-                        <div class="d-flex mt-2">
-                            <img src="{{ asset('image/download (12).png') }}" style="width: 50px" alt="">
-                            <div class="d-flex flex-column justify-content-center ml-2">
-                                <div>Jenny Choy</div>
-                            </div>
-                        </div>
-                        <div class="d-flex mt-2">
-                            <img src="{{ asset('image/download (13).png') }}" style="width: 50px" alt="">
-                            <div class="d-flex flex-column justify-content-center ml-2">
-                                <div>Miyuki Kurigawa</div>
-                            </div>
-                        </div>
-                        <div class="d-flex mt-2">
-                            <img src="{{ asset('image/download (14).png') }}" style="width: 50px" alt="">
-                            <div class="d-flex flex-column justify-content-center ml-2">
-                                <div>Rachel Cruz</div>
-                            </div>
                         </div>
                     </div>
                 </div>

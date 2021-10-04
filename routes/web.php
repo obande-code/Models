@@ -67,8 +67,56 @@ Route::get('/models/{name}/chat', [
 ]);
 Route::get('/modelmanagement', [
     App\Http\Controllers\AdminController::class,
-    'index',
+    'model',
 ])->name('modelmanagement');
+Route::get('/bannermanagement', [
+    App\Http\Controllers\AdminController::class,
+    'banner',
+])->name('bannermanagement');
+Route::get('/advertisemanagement', [
+    App\Http\Controllers\AdminController::class,
+    'advertise',
+])->name('advertisemanagement');
+Route::get('/newbanner', [
+    App\Http\Controllers\AdminController::class,
+    'newbanner',
+])->name('newbanner');
+Route::get('/newadvertise', [
+    App\Http\Controllers\AdminController::class,
+    'newadvertise',
+])->name('newadvertise');
+Route::post('/addnewbanner', [
+    App\Http\Controllers\AdminController::class,
+    'addnewbanner',
+])->name('addnewbanner');
+Route::post('/addnewadvertise', [
+    App\Http\Controllers\AdminController::class,
+    'addnewadvertise',
+])->name('addnewadvertise');
+Route::get('/delbanner/{post}', [
+    App\Http\Controllers\AdminController::class,
+    'delbanner',
+])->name('delbanner');
+Route::get('/deladvertise/{post}', [
+    App\Http\Controllers\AdminController::class,
+    'deladvertise',
+])->name('deladvertise');
+Route::get('/editbanner/{post}', [
+    App\Http\Controllers\AdminController::class,
+    'editbanner',
+])->name('editbanner');
+Route::get('/editadvertise/{post}', [
+    App\Http\Controllers\AdminController::class,
+    'editadvertise',
+])->name('editadvertise');
+Route::post('/editsavebanner', [
+    App\Http\Controllers\AdminController::class,
+    'editsavebanner',
+])->name('editsavebanner');
+Route::post('/editsaveadvertise', [
+    App\Http\Controllers\AdminController::class,
+    'editsaveadvertise',
+])->name('editsaveadvertise');
 Route::post('/modelaccept', [
     App\Http\Controllers\AdminController::class,
     'accept',

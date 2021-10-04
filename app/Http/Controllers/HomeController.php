@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -28,7 +29,14 @@ class HomeController extends Controller
         if (session('accept') == false) {
             return redirect()->route('waitaccept');
         }
-        return view('home');
+        $models = DB::table('users')
+                ->where('usertype', 'model')
+               ->get();
+        $banners = DB::table('banners')
+              ->get();
+        $advertisements = DB::table('advertisements')
+              ->get();
+        return view('home', compact('models'), compact('banners'))->with('advertisements', json_decode($advertisements));
     }
     public function init()
     {
