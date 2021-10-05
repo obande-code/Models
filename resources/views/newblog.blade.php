@@ -10,11 +10,11 @@
                     <label for="image_video" class="btn btn-login btn-success btn-block upload_label login_button">
                         {{ __('Upload') }}
                     </label>
-                    <!-- <input type="file" onchange="filechoose(event)" enctype=”multipart/form-data”
+                    <input type="file" onchange="filechoose(event)" enctype=”multipart/form-data”
                         class="form-control upload_input signup_input" id="image_video" placeholder="Upload here"
                         name="image_video" required>
                     <input type="text" class="form-control signup_input mt-2" id="uploadImage" placeholder="Upload here"
-                        required name="uploadImage" autofocus> -->
+                        required name="uploadImage" autofocus>
                 </div>
                 <div class="form-group">
                     <label for="title" class="font-weight-bold mb-0">Title</label>
