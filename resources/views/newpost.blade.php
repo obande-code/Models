@@ -23,12 +23,12 @@
                 </div>
                 <div class="form-group">
                     <label for="type" class="font-weight-bold mb-0">Type</label>
-                    <select class="form-control signup_input" onchange="selectType()" id="type" name="type" required>
+                    <!-- <select class="form-control signup_input" onchange="selectType()" id="type" name="type" required>
                         <option hidden>Select one</option>
                         <option>Free</option>
                         <option>Subscriber</option>
                         <option>Premium</option>
-                    </select>
+                    </select> -->
                 </div>
                 <div class="form-group">
                     <label for="amount" class="font-weight-bold mb-0">Amount</label>
