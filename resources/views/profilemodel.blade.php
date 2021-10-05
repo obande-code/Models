@@ -11,12 +11,12 @@
                 @csrf   
                 <input type="file" name="user_img" onchange="uploadprofile()" enctype="multipart/form-data" style="visibility: hidden; height: 0" id="user_img">
             </form>
-            <!-- @if($model[0]->cover == NULL)
+            @if($model[0]->cover == NULL)
             <img src="{{ asset('image/download (26).png') }}" class="mt-2" alt="">
             @endif
             @if($model[0]->cover != NULL)
             <img src="{{asset('storage/uploads/' .$model[0]->cover. '')}}" class="mt-2" style="height: 12vw" alt="">
-            @endif -->
+            @endif
             <img src="{{ asset('image/download (74).png') }}" class="info_image" alt="">
             <p class="change-cover text-light" onclick="changecover()">Change Cover</p>
             <a>
