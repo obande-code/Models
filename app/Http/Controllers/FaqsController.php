@@ -29,6 +29,8 @@ class FaqsController extends Controller
         if (session('accept') == false) {
             return redirect()->route('waitaccept');
         }
-        return view('faqs');
+        $faqs = DB::table('faqs')
+            ->get();
+        return view('faqs', compact('faqs'));
     }
 }

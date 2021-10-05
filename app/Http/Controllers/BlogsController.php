@@ -29,6 +29,8 @@ class BlogsController extends Controller
         if (session('accept') == false) {
             return redirect()->route('waitaccept');
         }
-        return view('blogs');
+        $blogs = DB::table('blogs')
+            ->get();
+        return view('blogs', compact('blogs'));
     }
 }

@@ -48,7 +48,7 @@ body {
   border-radius: 200px;
   overflow: hidden;
   margin-top: -15%;
-  margin-left: 34%;
+  margin-left: 35%;
   width: 30%; /* The size you want */
 }
 .image_middle:after {
@@ -209,7 +209,7 @@ body {
   font-size: 9px;
   position: absolute;
   left: 0;
-  bottom: 20px;
+  bottom: 8px;
   padding: 0;
 }
 .post-duration {
@@ -241,6 +241,12 @@ body {
   right: 10px;
   top: 33px;
 }
+.model_info_image {
+  position: absolute;
+  width: 20px;
+  right: 10px;
+  top: 10px;
+}
 .chat_user {
   background-color: black;
   width: 20px;
@@ -251,6 +257,7 @@ body {
 }
 .heart-img {
   width: 30px;
+  cursor: pointer;
 }
 .chat-img {
   width: 30px;
@@ -340,4 +347,101 @@ body {
   background: black;
   opacity: 0.6;
   cursor: pointer;
+}
+.change-user {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+  text-align: center;
+  background: black;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.cover-img {
+  width: 100%;
+  height: 9vw;
+}
+.model-cover {
+  height: 20vw;
+}
+.btn-modal {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+.modal-dialog {
+  margin-top: 90px;
+}
+.item-active {
+  border-radius: 20px;
+  background: #A05656;
+  margin-right: 10px;
+}
+.round-img-container {
+  position: relative;
+  width: 100%; /* The size you want */
+  border-radius: 100px;
+  overflow: hidden;
+}
+.round-img-container:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%; /* The padding depends on the width, not on the height, so with a padding-bottom of 100% you will get a square */
+}
+.round-img-right {
+  position: relative;
+  width: 70px; /* The size you want */
+  border-radius: 100px;
+  overflow: hidden;
+}
+.round-img-right:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%; /* The padding depends on the width, not on the height, so with a padding-bottom of 100% you will get a square */
+}
+.round-img {
+  position: absolute; /* Take your picture out of the flow */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; /* Make the picture taking the size of it's parent */
+  width: 100%; /* This if for the object-fit */
+  height: 100%; /* This if for the object-fit */
+  object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
+  object-position: center;
+}
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+.carousel-img {
+  height: 300px !important;
+}
+.advertise {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0px 2px 8px darkgrey;
+}
+.advertise-title {
+  align-self: start;
+  font-weight: bold;
+}
+.blog-image {
+  width: 100%;
+}
+.blog-body {
+  font-size: 1rem;
+}
+.blog-block {
+  height: fit-content;
+  width: 350px;
+  margin: 10px 10px 0 0;
+  box-shadow: 0px 2px 8px darkgrey;
 }

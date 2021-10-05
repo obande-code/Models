@@ -152,7 +152,7 @@
                 </li>
                 @endif
                 <li class="nav-item mb-3 ml-3">
-                    <a class="nav-link text-white" href="/blogs" id="blogs">
+                    <a class="nav-link text-white" href="/ablogs" id="ablogs">
                         <span><img src="{{ asset('image/download (23).png') }}" id="tickets_icon" style="width: 25px"
                                 alt="Kiwi standing on oval"></span>
                         <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Blogs</span>
@@ -166,6 +166,7 @@
                         <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">Contact Us</span>
                     </a>
                 </li>
+                @endif
                 <li class="nav-item mb-3 ml-3">
                     <a class="nav-link text-white" href="/faqs" id="faqs">
                         <span><img src="{{ asset('image/download (25).png') }}" id="tickets_icon" style="width: 25px"
@@ -173,7 +174,6 @@
                         <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">FAQs</span>
                     </a>
                 </li>
-                @endif
             </ul>
             <div class="sidebar_footer">
                 <div class="d-flex justify-content-center">

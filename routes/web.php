@@ -77,10 +77,26 @@ Route::get('/advertisemanagement', [
     App\Http\Controllers\AdminController::class,
     'advertise',
 ])->name('advertisemanagement');
+Route::get('/blogsmanagement', [
+    App\Http\Controllers\AdminController::class,
+    'blogs',
+])->name('blogsmanagement');
+Route::get('/faqsmanagement', [
+    App\Http\Controllers\AdminController::class,
+    'faqs',
+])->name('faqsmanagement');
 Route::get('/newbanner', [
     App\Http\Controllers\AdminController::class,
     'newbanner',
 ])->name('newbanner');
+Route::get('/newblog', [
+    App\Http\Controllers\AdminController::class,
+    'newblog',
+])->name('newblog');
+Route::get('/newfaq', [
+    App\Http\Controllers\AdminController::class,
+    'newfaq',
+])->name('newfaq');
 Route::get('/newadvertise', [
     App\Http\Controllers\AdminController::class,
     'newadvertise',
@@ -89,6 +105,14 @@ Route::post('/addnewbanner', [
     App\Http\Controllers\AdminController::class,
     'addnewbanner',
 ])->name('addnewbanner');
+Route::post('/addnewblog', [
+    App\Http\Controllers\AdminController::class,
+    'addnewblog',
+])->name('addnewblog');
+Route::post('/addnewfaq', [
+    App\Http\Controllers\AdminController::class,
+    'addnewfaq',
+])->name('addnewfaq');
 Route::post('/addnewadvertise', [
     App\Http\Controllers\AdminController::class,
     'addnewadvertise',
@@ -97,6 +121,14 @@ Route::get('/delbanner/{post}', [
     App\Http\Controllers\AdminController::class,
     'delbanner',
 ])->name('delbanner');
+Route::get('/delblog/{post}', [
+    App\Http\Controllers\AdminController::class,
+    'delblog',
+])->name('delblog');
+Route::get('/delfaq/{post}', [
+    App\Http\Controllers\AdminController::class,
+    'delfaq',
+])->name('delfaq');
 Route::get('/deladvertise/{post}', [
     App\Http\Controllers\AdminController::class,
     'deladvertise',
@@ -105,6 +137,14 @@ Route::get('/editbanner/{post}', [
     App\Http\Controllers\AdminController::class,
     'editbanner',
 ])->name('editbanner');
+Route::get('/editblog/{post}', [
+    App\Http\Controllers\AdminController::class,
+    'editblog',
+])->name('editblog');
+Route::get('/editfaq/{post}', [
+    App\Http\Controllers\AdminController::class,
+    'editfaq',
+])->name('editfaq');
 Route::get('/editadvertise/{post}', [
     App\Http\Controllers\AdminController::class,
     'editadvertise',
@@ -113,6 +153,14 @@ Route::post('/editsavebanner', [
     App\Http\Controllers\AdminController::class,
     'editsavebanner',
 ])->name('editsavebanner');
+Route::post('/editsaveblog', [
+    App\Http\Controllers\AdminController::class,
+    'editsaveblog',
+])->name('editsaveblog');
+Route::post('/editsavefaq', [
+    App\Http\Controllers\AdminController::class,
+    'editsavefaq',
+])->name('editsavefaq');
 Route::post('/editsaveadvertise', [
     App\Http\Controllers\AdminController::class,
     'editsaveadvertise',
@@ -149,10 +197,10 @@ Route::get('/livenow', [
     App\Http\Controllers\LivenowController::class,
     'index',
 ])->name('livenow');
-Route::get('/blogs', [
+Route::get('/ablogs', [
     App\Http\Controllers\BlogsController::class,
     'index',
-])->name('blogs');
+])->name('ablogs');
 Route::get('/contactus', [
     App\Http\Controllers\ContactusController::class,
     'index',
