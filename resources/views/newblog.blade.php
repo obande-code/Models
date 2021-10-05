@@ -16,11 +16,11 @@
                     <input type="text" class="form-control signup_input mt-2" id="uploadImage" placeholder="Upload here"
                         required name="uploadImage" autofocus>
                 </div>
-                <!-- <div class="form-group">
+                <div class="form-group">
                     <label for="title" class="font-weight-bold mb-0">Title</label>
                     <input type="text" class="form-control signup_input" id="title" placeholder="Type here"
                         required name="title" autofocus>
-                </div> -->
+                </div>
                 <div class="form-group">
                     <label for="date" class="font-weight-bold mb-0">Date</label>
                     <input type="text" class="form-control signup_input" id="date" placeholder="Type here"
