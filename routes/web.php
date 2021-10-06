@@ -205,7 +205,7 @@ Route::get('/contactus', [
     App\Http\Controllers\ContactusController::class,
     'index',
 ])->name('contactus');
-Route::get('/faqs', [
+Route::get('/afaqs', [
     App\Http\Controllers\FaqsController::class,
     'index',
 ])->name('faqs');
@@ -261,3 +261,8 @@ Route::post('/remove-favorite', [
     App\Http\Controllers\FavoritesController::class,
     'remove',
 ])->name('remove-favorite');
+
+Route::get('send-mail', [
+    App\Http\Controllers\MailController::class,
+    'sendMail',
+])->name('send.mail');

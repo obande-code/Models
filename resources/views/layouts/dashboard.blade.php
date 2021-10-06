@@ -168,7 +168,7 @@
                 </li>
                 @endif
                 <li class="nav-item mb-3 ml-3">
-                    <a class="nav-link text-white" href="/faqs" id="faqs">
+                    <a class="nav-link text-white" href="/afaqs" id="faqs">
                         <span><img src="{{ asset('image/download (25).png') }}" id="tickets_icon" style="width: 25px"
                                 alt="Kiwi standing on oval"></span>
                         <span class="ml-2 menu_item" id="tickets_text" style="font-size: 14px">FAQs</span>

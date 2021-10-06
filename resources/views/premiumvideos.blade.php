@@ -140,7 +140,12 @@ function payclick(event) {
 function videoclick(event) {
   let blur = event.currentTarget.style.filter;
   if (blur != 'blur(10px)') {
-    event.currentTarget.controls = true;
+    if (event.currentTarget.playing) {
+      event.currentTarget.pause();
+    }
+    else {
+      event.currentTarget.play();
+    }
     event.currentTarget.style.zIndex = 1;
   }
   else {

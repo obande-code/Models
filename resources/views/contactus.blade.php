@@ -39,8 +39,7 @@
         <div class="form-group row">
           <label for="inputPassword3" class="col-sm-2 col-form-label">Message</label>
           <div class="col-sm-10">
-            <textarea name="message"  class="form-control" style="width:100%; height:60px;">
-            </textarea>
+            <textarea name="message"  class="form-control" style="width:100%; height:60px;"></textarea>
           </div>
         </div>
         <div class="form-group row mb-0">
@@ -50,17 +49,23 @@
         </div>
       </form>
       <div class="d-flex justify-content-center">
-        <img src="{{ asset('image/download (63).png') }}" alt="">
-        <div class="d-flex flex-column  justify-content-center">
+        <div class="mail-img d-flex justify-content-end">
+          <img src="{{ asset('image/download (63).png') }}" class="phone-img" alt="">
+        </div>
+        <div class="mail-title d-flex flex-column  justify-content-center">
           <p class="mb-0">+63 927 305 9127</p>
           <p class="mb-0">+632 8551 71230</p>
         </div>
       </div>
       <div class="d-flex justify-content-center">
-        <img src="{{ asset('image/download (64).png') }}" class="m-3" alt="">
-        <div class="d-flex flex-column  justify-content-center">
-          <p class="mb-0">+63 927 305 9127</p>
-          <p class="mb-0">+632 8551 71230</p>
+        <div class="mail-img mail-block d-flex justify-content-end">
+          <img src="{{ asset('image/download (64).png') }}" class="m-3" alt="">
+        </div>
+        <div class="mail-title d-flex flex-column  justify-content-center">
+          <p class="mb-0">ohaiiimarketing@gmail.com</p>
+          <p class="mb-0">ohaiiirecruitment@gmail.com</p>
+          <p class="mb-0">ohaiiidevelopment@gmail.com</p>
+          <p class="mb-0">ohaiiihelpdesk@gmail.com</p>
         </div>
       </div>
   </div>

@@ -30,7 +30,7 @@ document.onreadystatechange = function () {
       else if (location.search('contactus') > 0) {
           document.getElementById('contactus').classList.add("item-active");
       }
-      else if (location.search('faqs') > 0) {
+      else if (location.search('afaqs') > 0) {
           document.getElementById('faqs').classList.add("item-active");
       }
       else if (location.search('dashboard') > 0) {
@@ -53,6 +53,9 @@ document.onreadystatechange = function () {
       }
       else if (location.search('blogsmanagement') > 0) {
         document.getElementById('blogsmanagement').classList.add("item-active");
+      }
+      else if (location.search('faqsmanagement') > 0) {
+        document.getElementById('faqsmanagement').classList.add("item-active");
       }
     //   let videos = document.getElementsByTagName('video');
     //     for (let index = 0; index < videos.length; index++) {

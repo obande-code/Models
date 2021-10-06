@@ -10503,8 +10503,10 @@ a.text-dark:focus {
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
   background-color: #a81818;
 }
-.custom-checkbox {
-  margin-left: 25%;
+@media only screen and (min-width: 577px) {
+  .custom-checkbox {
+    margin-left: 25%;
+  }
 }
 .back_login {
   color: black;
