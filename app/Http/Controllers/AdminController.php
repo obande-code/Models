@@ -68,7 +68,7 @@ class AdminController extends Controller
     }
     public function newfaq()
     {
-        // return view('newfaq');
+        return view('newfaq');
     }
     public function newadvertise()
     {
