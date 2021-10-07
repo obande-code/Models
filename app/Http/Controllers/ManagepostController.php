@@ -47,9 +47,9 @@ class ManagepostController extends Controller
         if (session('accept') == false) {
             return redirect()->route('waitaccept');
         }
-        // $post = DB::table('posts')
-        //     ->where('image_video', $image)
-        //     ->delete();
+        $post = DB::table('posts')
+            ->where('image_video', $image)
+            ->delete();
         return redirect()->route('managepost');
     }
 }
