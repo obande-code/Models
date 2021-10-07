@@ -26,7 +26,7 @@ class ManagepostController extends Controller
         if (session('accept') == false) {
             return redirect()->route('waitaccept');
         }
-        $username = Auth::user()->name;
+        // $username = Auth::user()->name;
         $posts = DB::table('posts')
             ->where('username', $username)
             ->get();
