@@ -53,11 +53,14 @@ class ModelsController extends Controller
             ->where('modelname', $name)
             ->where('fanname', $user)
             ->get();
+        $profile = DB::table('profiles')
+            ->where('name', $name)
+            ->get();
         return view(
             'detailmodels',
             ['model' => json_decode($model)],
             ['posts' => json_decode($posts)]
-        )->with('favorite', json_decode($favorite));
+        )->with('favorite', json_decode($favorite))->with('profile', json_decode($profile));
     }
     public function chat()
     {

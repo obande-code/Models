@@ -106,11 +106,11 @@ class AdminController extends Controller
             ->file('image_video')
             ->storeAs('uploads', $fileName, 'public');
         $request->image_video = $fileName;
-        // $validatedData = $request->validate([
-        //     'title' => 'required',
-        //     'date' => 'required',
-        //     'body' => 'required',
-        // ]);
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'date' => 'required',
+            'body' => 'required',
+        ]);
         $validatedData = Arr::add($validatedData, 'image', $fileName);
         Blog::create($validatedData);
         return redirect()->route('blogsmanagement');

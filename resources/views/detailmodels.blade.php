@@ -11,12 +11,12 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-body d-flex flex-column justify-content-center">
-                            <div class="d-flex justify-content-center">Miyuki Kurigawa</div>
-                            <div class="d-flex justify-content-center">Japanese</div>
+                            <div class="d-flex justify-content-center">{{$model[0]->name}}</div>
+                            <div class="d-flex justify-content-center">{{$model[0]->nationality}}</div>
                             <div class="d-flex justify-content-center">24 y/o</div>
-                            <div class="d-flex justify-content-center">Fitness Coach | Model | Actress</div>
-                            <div class="d-flex justify-content-center">https://www.facebook.com/miyukikuragawi/</div>
-                            <div class="d-flex justify-content-center">https://www.instagram.com/miyukikuragawi/</div>
+                            <div class="d-flex justify-content-center">{{$profile[0]->description}}</div>
+                            <div class="d-flex justify-content-center">{{$profile[0]->facebook}}</div>
+                            <div class="d-flex justify-content-center">{{$profile[0]->instagram}}</div>
                             <div class="d-flex justify-content-center mt-4">
                                 <button class="btn btn-success w-25" data-dismiss="modal">ok</button>
                             </div>
