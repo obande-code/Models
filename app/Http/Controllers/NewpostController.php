@@ -83,7 +83,7 @@ class NewpostController extends Controller
                 'amount' => 'required',
             ]);
         }
-        $user = Auth::user()->name;
+        // $user = Auth::user()->name;
         $validatedData = Arr::add($validatedData, 'image_video', $fileName);
         $validatedData = Arr::add($validatedData, 'username', $user);
         $post = Post::find($request->id)->delete();
