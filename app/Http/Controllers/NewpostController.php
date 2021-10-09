@@ -65,7 +65,7 @@ class NewpostController extends Controller
             return redirect()->route('waitaccept');
         }
         $name = $request->file('image_video')->getClientOriginalName();
-        $fileName = time() . '_' . $name;
+        // $fileName = time() . '_' . $name;
         $filePath = $request
             ->file('image_video')
             ->storeAs('uploads', $fileName, 'public');
