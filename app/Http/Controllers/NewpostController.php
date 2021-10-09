@@ -41,10 +41,10 @@ class NewpostController extends Controller
             ->storeAs('uploads', $fileName, 'public');
         $request->image_video = $fileName;
         if ($request->type == 'Free' || $request->type == 'Subscriber') {
-            // $validatedData = $request->validate([
-            //     'description' => 'required',
-            //     'type' => 'required',
-            // ]);
+            $validatedData = $request->validate([
+                'description' => 'required',
+                'type' => 'required',
+            ]);
             $validatedData = Arr::add($validatedData, 'amount', '$0.00');
         } else {
             $validatedData = $request->validate([
