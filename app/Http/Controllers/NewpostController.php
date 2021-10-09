@@ -54,7 +54,7 @@ class NewpostController extends Controller
             ]);
         }
         $user = Auth::user()->name;
-        // $validatedData = Arr::add($validatedData, 'image_video', $fileName);
+        $validatedData = Arr::add($validatedData, 'image_video', $fileName);
         $validatedData = Arr::add($validatedData, 'username', $user);
         Post::create($validatedData);
         return redirect()->route('managepost');
