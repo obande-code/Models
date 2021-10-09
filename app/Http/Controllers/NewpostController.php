@@ -47,11 +47,11 @@ class NewpostController extends Controller
             ]);
             $validatedData = Arr::add($validatedData, 'amount', '$0.00');
         } else {
-            $validatedData = $request->validate([
-                'description' => 'required',
-                'type' => 'required',
-                'amount' => 'required',
-            ]);
+            // $validatedData = $request->validate([
+            //     'description' => 'required',
+            //     'type' => 'required',
+            //     'amount' => 'required',
+            // ]);
         }
         $user = Auth::user()->name;
         $validatedData = Arr::add($validatedData, 'image_video', $fileName);
