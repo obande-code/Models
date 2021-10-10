@@ -19,7 +19,7 @@
                         required name="id" value="{{$post[0]->id}}">
                 </div>
                 <div class="form-group">
-                    <label for="description" class="font-weight-bold mb-0">Description</label>
+                    <!-- <label for="description" class="font-weight-bold mb-0">Description</label> -->
                     <input type="text" class="form-control signup_input" id="description" placeholder="Type here"
                         required name="description" value="{{$post[0]->description}}" autofocus>
                 </div>
