@@ -41,10 +41,10 @@ Route::get('/waitaccept', [
     App\Http\Controllers\ModelController::class,
     'waitaccept',
 ])->name('waitaccept');
-Route::get('/models', [
-    App\Http\Controllers\ModelsController::class,
-    'index',
-])->name('models');
+// Route::get('/models', [
+//     App\Http\Controllers\ModelsController::class,
+//     'index',
+// ])->name('models');
 Route::get('/models/{name}', [
     App\Http\Controllers\ModelsController::class,
     'detail',
