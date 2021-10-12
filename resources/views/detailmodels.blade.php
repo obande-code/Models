@@ -2,7 +2,7 @@
 @section('mainContent')
 <div class="d-flex justify-content-center flex-wrap">
     <div class=" w-75 d-flex flex-column model_img_mobile">
-        <div class="mt-2 d-flex flex-column model_img_mobile position-relative">
+        <div class="mt-2 d-flex flex-column model_img_mobile position-relative mb-2 box-shadow">
             <!-- Modal -->
             <button type="button" class="btn-modal" data-toggle="modal" data-target="#exampleModal" id="modalbutton">
                 Launch demo modal
@@ -25,10 +25,10 @@
                 </div>
             </div>
             @if($model[0]->cover == NULL)
-            <img src="{{ asset('image/download(2).jpg') }}" class="mt-1 model-cover" alt="">
+            <img src="{{ asset('image/download(2).jpg') }}" class="model-cover" alt="">
             @endif
             @if($model[0]->cover != NULL)
-            <img src="{{asset('storage/uploads/' .$model[0]->cover. '')}}" class="mt-1 model-cover" alt="">
+            <img src="{{asset('storage/uploads/' .$model[0]->cover. '')}}" class="model-cover" alt="">
             @endif
             <img src="{{ asset('image/download (74).png') }}" class="model_info_image" onmouseover="infoshow()" alt="">
             <a href="/models">
@@ -41,7 +41,11 @@
                     @endif
                 </div>
             </a>
-            <div class="d-flex justify-content-center">{{$model[0]->name}}</div>
+            <div class="d-flex justify-content-center font-weight-bold">
+                <img src="{{ asset('image/download (38).png') }}" class="ml-auto mx-1" style="visibility:hidden" alt="">
+                {{$model[0]->name}}
+                <img src="{{ asset('image/download (38).png') }}" class="ml-auto mx-1" alt="">
+            </div>
         </div>
         
         <div class="d-flex mt-1">
@@ -55,7 +59,6 @@
             <a class="mx-1" href="{{ url('models/' . $model[0]->name.'/chat') }}">
                 <img src="{{ asset('image/download (37).png') }}" class="chat-img" alt="">
             </a>
-            <img src="{{ asset('image/download (38).png') }}" class="ml-auto mx-1" alt="">
         </div>
         <p>Hi Honey, do you want to be closer to me? Natural beauty without silicone. Subscribe to me, dear ones</p>
         <div class="row p-3">

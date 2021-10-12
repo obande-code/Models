@@ -11,7 +11,7 @@
         <p class="navbar-text text-white mb-2 hidden_P" style="visibility: hidden">
             Hi, Bryan Altes
         </p>
-        <p class="text-white mb-2">OHAII</p>
+        <p class="text-white mb-2" id="title"></p>
         <div class="d-flex">
             <p class="navbar-text text-white mb-1 header_username">
                 Hi, Bryan Altes
@@ -206,7 +206,16 @@
                                 aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     </div>
-                   
+                   @foreach($models as $model)
+                    <div class="d-flex mt-2">
+                        <div class="round-img-right">
+                            <img src="{{asset('storage/uploads/' .$model->profile. '')}}" class="round-img" alt="">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center ml-2">
+                        {{$model->name}}
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
         </main>
     </div>

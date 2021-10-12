@@ -36,7 +36,7 @@ class HomeController extends Controller
               ->get();
         $advertisements = DB::table('advertisements')
               ->get();
-        return view('home', compact('models'), compact('banners'))->with('advertisements', json_decode($advertisements));
+        return view('home', compact('banners'))->with('advertisements', json_decode($advertisements));
     }
     public function init()
     {

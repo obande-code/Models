@@ -8,7 +8,7 @@
           <img src="{{asset('storage/uploads/' .$blog->image. '')}}" class="blog-image" alt="">
           <h4>{{$blog->title}}</h4>
           <h6>{{$blog->date}}</h6>
-          <pre class="blog-body">{{$blog->body}}</pre>
+          <p class="blog-body">{{$blog->body}}</p>
         </div>
         @endif
         @endforeach
@@ -20,7 +20,7 @@
           <img src="{{asset('storage/uploads/' .$blog->image. '')}}" class="blog-image" alt="">
           <h4>{{$blog->title}}</h4>
           <h6>{{$blog->date}}</h6>
-          <pre class="blog-body">{{$blog->body}}</pre>
+          <p class="blog-body">{{$blog->body}}</p>
         </div>
         @endif
         @endforeach

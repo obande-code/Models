@@ -1,28 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="web_img">
-    <div class="d-flex">
-        <div>
-            <img class="img-fluid" src="{{ asset('image/download.png') }}" alt="">
+<div class="top-content">
+    <div class="px-0">
+        <div id="carousel-example" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner row w-100 mx-0" role="listbox">
+                @foreach($banners as $banner)
+                @if($banner == $banners[0])
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 px-0 active">
+                    <img src="{{asset('storage/uploads/' .$banner->path. '')}}" class="w-100 mx-0 carousel-img d-block" alt="img1">
+                </div>
+                @else
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 px-0">
+                    <img src="{{asset('storage/uploads/' .$banner->path. '')}}" class="w-100 mx-0 carousel-img d-block" alt="img2">
+                </div>
+                @endif
+                @endforeach
+            </div>
         </div>
-        <div>
-            <img class="img-fluid" src="{{ asset('image/download (1).png') }}" alt="">
-        </div>
-        <div>
-            <img class="img-fluid" src="{{ asset('image/download (2).png') }}" alt="">
-        </div>
-        <div>
-            <img class="img-fluid" src="{{ asset('image/download (3).png') }}" alt="">
-        </div>
-        <div>
-            <img class="img-fluid" src="{{ asset('image/download (5).png') }}" alt="">
-        </div>
-    </div>
-</div>
-<div class="mobile_img">
-    <div>
-        <img class="w-100" src="{{ asset('image/download (1).png') }}" alt="">
     </div>
 </div>
 <div class="container">
@@ -103,7 +98,7 @@
                     <div class="form-group row justify-content-center login_form_footer">
                         <div class=" col-md-8 d-flex justify-content-around">
                             <img src="{{ asset('image/download (8).png') }}" class="footer_img" alt="">
-                            <h6 class="d-flex flex-column justify-content-center footer_text">Copyright &copy; 2021
+                            <h6 class="d-flex flex-column justify-content-center footer_text mt-2">Copyright &copy; 2021
                                 OHAIII</h6>
                         </div>
                     </div>
@@ -112,4 +107,5 @@
         </div>
     </div>
 </div>
+
 @endsection

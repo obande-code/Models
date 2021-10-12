@@ -15,7 +15,7 @@
     <div class="w-75">
         <div class="row">
             @foreach ($models as $model)
-            <div class="col-6 mt-2 d-flex flex-column model_img_mobile">
+            <div class="col-6 mt-2 d-flex flex-column model_img_mobile box-shadow">
                 @if($model->cover == NULL)
                 <img src="{{ asset('image/download (26).png') }}" class="mt-2 cover-img" alt="">
                 @endif
@@ -32,7 +32,11 @@
                         @endif
                     </div>
                 </a>
-                <div class="d-flex justify-content-center">{{$model->name}}</div>
+                <div class="d-flex justify-content-center">
+                    <img src="{{ asset('image/download (38).png') }}" class="ml-auto mx-1" style="visibility:hidden" alt="">
+                    {{$model->name}}
+                    <img src="{{ asset('image/download (38).png') }}" class="ml-auto mx-1" alt="">
+                </div>
             </div>
             @endforeach
         </div>
