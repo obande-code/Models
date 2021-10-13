@@ -16,10 +16,10 @@
                   </div>
                   <div class="panel-body">
                      @if (Session::has('success'))
-                     <div class="alert alert-success text-center">
+                     <!-- <div class="alert alert-success text-center">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                         <p>{{ Session::get('success') }}</p><br>
-                     </div>
+                     </div> -->
                      @endif
                      <br>
                      <form role="form" action="{{ route('stripe.post') }}" method="post" class="require-validation" data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
