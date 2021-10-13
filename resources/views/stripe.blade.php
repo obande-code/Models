@@ -89,14 +89,14 @@ $(function() {
         }
     });
     if (!$form.data('cc-on-file')) {
-      e.preventDefault();
-      Stripe.setPublishableKey($form.data('stripe-publishable-key'));
-      Stripe.createToken({
-          number: $('.card-number').val(),
-          cvc: $('.card-cvc').val(),
-          exp_month: $('.card-expiry-month').val(),
-          exp_year: $('.card-expiry-year').val()
-      }, stripeResponseHandler);
+      // e.preventDefault();
+      // Stripe.setPublishableKey($form.data('stripe-publishable-key'));
+      // Stripe.createToken({
+      //     number: $('.card-number').val(),
+      //     cvc: $('.card-cvc').val(),
+      //     exp_month: $('.card-expiry-month').val(),
+      //     exp_year: $('.card-expiry-year').val()
+      // }, stripeResponseHandler);
     }
   });
 
