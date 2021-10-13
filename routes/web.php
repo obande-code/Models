@@ -253,6 +253,10 @@ Route::post('/paid', [
     App\Http\Controllers\PaidController::class,
     'paid',
 ])->name('paid');
+Route::post('/subscriber', [
+    App\Http\Controllers\SubscriberController::class,
+    'subscriber',
+])->name('subscriber');
 Route::post('/add-favorite', [
     App\Http\Controllers\FavoritesController::class,
     'add',
@@ -266,3 +270,6 @@ Route::get('send-mail', [
     App\Http\Controllers\MailController::class,
     'sendMail',
 ])->name('send.mail');
+
+Route::get('stripe', [App\Http\Controllers\StripeController::class, 'stripe']);
+Route::post('stripe', [App\Http\Controllers\StripeController::class, 'stripePost'])->name('stripe.post');

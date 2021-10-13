@@ -57,10 +57,8 @@
                         </div>
                         <div class="form-group">
                             <label for="nationality" class="font-weight-bold mb-0">Nationality</label>
-                            <select class="form-control signup_input" id="nationality" name="nationality" required>
+                            <select id="nationality" name="nationality" class="form-control signup_input selectpicker countrypicker" data-live-search="true" data-default="United States" data-flag="true" required>
                                 <option hidden>Choose one</option>
-                                <option>UK</option>
-                                <option>US</option>
                             </select>
                             @error('nationality')
                             <span class="invalid-feedback" role="alert">

@@ -15,14 +15,14 @@
     <div class="w-75">
         <div class="row">
             @foreach ($models as $model)
-            <div class="col-6 mt-2 d-flex flex-column model_img_mobile box-shadow">
+            <div class="col-6 my-2 d-flex flex-column model_img_mobile">
                 @if($model->cover == NULL)
                 <img src="{{ asset('image/download (26).png') }}" class="mt-2 cover-img" alt="">
                 @endif
                 @if($model->cover != NULL)
                 <img src="{{asset('storage/uploads/' .$model->cover. '')}}" class="mt-2 cover-img" alt="">
                 @endif
-                <a href="{{ url('models/' . $model->name) }}">
+                <a href="{{ url('models/' . $model->name) }}" class="border-nobottom">
                     <div class="image_middle">
                         @if($model->profile == NULL)
                         <img src="{{ asset('image/download (27).png') }}" class="w-100 user-image" alt="">
@@ -32,10 +32,10 @@
                         @endif
                     </div>
                 </a>
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center border-notop">
                     <img src="{{ asset('image/download (38).png') }}" class="ml-auto mx-1" style="visibility:hidden" alt="">
                     {{$model->name}}
-                    <img src="{{ asset('image/download (38).png') }}" class="ml-auto mx-1" alt="">
+                    <img src="{{ asset('Bootstrap-Country-Picker-jQuery/css/flags/'.$model->nationality.'.png') }}" class="ml-auto mx-1 flag-img" alt="">
                 </div>
             </div>
             @endforeach

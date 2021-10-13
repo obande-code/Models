@@ -49,6 +49,10 @@ class ModelsController extends Controller
         $model = DB::table('users')
             ->where('name', $name)
             ->get();
+        $subscriber = DB::table('subscribers')
+            ->where('name', $user)
+            ->where('subscriber', $name)
+            ->get();
         $favorite = DB::table('favorites')
             ->where('modelname', $name)
             ->where('fanname', $user)
@@ -60,7 +64,7 @@ class ModelsController extends Controller
             'detailmodels',
             ['model' => json_decode($model)],
             ['posts' => json_decode($posts)]
-        )->with('favorite', json_decode($favorite))->with('profile', json_decode($profile));
+        )->with('favorite', json_decode($favorite))->with('profile', json_decode($profile))->with('subscriber', json_decode($subscriber));
     }
     public function chat()
     {

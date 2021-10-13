@@ -7,30 +7,15 @@
             <button type="button" class="btn-modal" data-toggle="modal" data-target="#exampleModal" id="modalbutton">
                 Launch demo modal
             </button>
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-body d-flex flex-column justify-content-center">
-                            <div class="d-flex justify-content-center">{{$model[0]->name}}</div>
-                            <div class="d-flex justify-content-center">{{$model[0]->nationality}}</div>
-                            <div class="d-flex justify-content-center">24 y/o</div>
-                            <div class="d-flex justify-content-center">{{$profile[0]->description}}</div>
-                            <div class="d-flex justify-content-center">{{$profile[0]->facebook}}</div>
-                            <div class="d-flex justify-content-center">{{$profile[0]->instagram}}</div>
-                            <div class="d-flex justify-content-center mt-4">
-                                <button class="btn btn-success w-25" data-dismiss="modal">ok</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             @if($model[0]->cover == NULL)
-            <img src="{{ asset('image/download(2).jpg') }}" class="model-cover" alt="">
+            <img src="{{ asset('image/download (2).png') }}" class="model-cover" alt="">
             @endif
             @if($model[0]->cover != NULL)
             <img src="{{asset('storage/uploads/' .$model[0]->cover. '')}}" class="model-cover" alt="">
             @endif
             <img src="{{ asset('image/download (74).png') }}" class="model_info_image" onmouseover="infoshow()" alt="">
+            
             <a href="/models">
                 <div class="image_middle">
                     @if($model[0]->profile == NULL)
@@ -41,15 +26,15 @@
                     @endif
                 </div>
             </a>
-            <div class="d-flex justify-content-center font-weight-bold">
-                <img src="{{ asset('image/download (38).png') }}" class="ml-auto mx-1" style="visibility:hidden" alt="">
+            <div class="d-flex justify-content-center mb-2 font-weight-bold">
+                <img src="{{ asset('image/download (38).png') }}" class="ml-auto mx-3" style="visibility:hidden" alt="">
                 {{$model[0]->name}}
-                <img src="{{ asset('image/download (38).png') }}" class="ml-auto mx-1" alt="">
+                <img src="{{ asset('Bootstrap-Country-Picker-jQuery/css/flags/'.$model[0]->nationality.'.png') }}" class="ml-auto mx-3 flag-img" alt="">
             </div>
         </div>
         
-        <div class="d-flex mt-1">
-            <button class="btn rounded-pill btn-outline-danger btn-sm btn-subscribe mx-1" onclick="subscribe()">Subscribe</button>
+        <div class="d-flex my-2">
+            <button class="btn rounded-pill btn-outline-danger btn-sm btn-subscribe mx-1" onclick="subscribe('{{$model[0]->name}}')">Subscribe</button>
             @if(sizeof($favorite) > 0)
             <img src="{{ asset('image/download (72).png') }}"  onclick="removefavorite('{{$model[0]->name}}')" class="mx-2 heart-img" alt="">
             @endif
@@ -72,10 +57,17 @@
                 <button class="btn btn-primary btn-sm rounded-pill btn_post post_badge">Free</button>
                 @endif
                 @if($post->type == 'Subscriber')
+                @if(sizeof($subscriber) > 0)
+                <div class="img-container">
+                    <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="free-img w-100 p-auto" alt="">
+                </div>
+                <button class="btn btn-success btn-sm rounded-pill btn_post post_badge">Subscriber</button>
+                @else
                 <div class="img-container">
                     <img src="{{asset('storage/uploads/' .$post->image_video. '')}}" class="free-img w-100 subscribe_image p-auto" alt="">
                 </div>
                 <button class="btn btn-success btn-sm rounded-pill btn_post post_badge">Subscriber</button>
+                @endif
                 @endif
                 @if($post->type == 'Premium')
                 <video controls class="model-post-img w-100 p-0 premium_image">
@@ -85,16 +77,43 @@
                 @endif
             </div>
             @endforeach
-
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body d-flex flex-column justify-content-center">
+                <div class="d-flex justify-content-center">{{$model[0]->name}}</div>
+                <div class="d-flex justify-content-center">{{$model[0]->nationality}}</div>
+                <div class="d-flex justify-content-center">24 y/o</div>
+                <div class="d-flex justify-content-center">{{$profile[0]->description}}</div>
+                <div class="d-flex justify-content-center">{{$profile[0]->facebook}}</div>
+                <div class="d-flex justify-content-center">{{$profile[0]->instagram}}</div>
+                <div class="d-flex justify-content-center mt-4">
+                    <button class="btn btn-success w-25" data-dismiss="modal">ok</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 <script>
-    function subscribe() {
-        let subscribes = document.getElementsByClassName('subscribe_image');
-        for (let index = 0; index < subscribes.length; index++) {
-            subscribes[index].style.filter = 'blur(0)';
-        }
+    function subscribe(model) {
+        $(document).ready(function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.post("/subscriber", {
+                subscriber: model
+            }, function(result) {
+                let subscribes = document.getElementsByClassName('subscribe_image');
+                for (let index = 0; index < subscribes.length; index++) {
+                    subscribes[index].style.filter = 'blur(0)';
+                }
+            });
+        });
     }
     function infoshow() {
         document.getElementById('modalbutton').click();

@@ -37,6 +37,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\ShareAuthenticatedUser::class,
         ],
 
         'api' => [
@@ -68,5 +69,6 @@ class Kernel extends HttpKernel
         'jwt' => \App\Http\Middleware\CheckJWT::class,
         'usertype' => \App\Http\Middleware\UserType::class,
         'ensureaccept' => \App\Http\Middleware\EnsureAccept::class,
+        'shareauth' => \App\Http\Middleware\ShareAuthenticatedUser::class,
     ];
 }

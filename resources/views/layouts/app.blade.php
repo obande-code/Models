@@ -29,6 +29,7 @@
     window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')
     </script>
     <script src="{{ asset('dashboard/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('Bootstrap-Country-Picker-jQuery/js/countrypicker.js') }}"></script>
 </head>
 
 <body>

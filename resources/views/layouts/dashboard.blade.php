@@ -4,19 +4,19 @@
     style="background-color: #770D0D !important;">
     <button class="navbar-toggler position-absolute d-md-none collapsed border-0" type="button" data-toggle="collapse"
         data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation"
-        style="left: 10px">
+        style="left: -5px">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarText">
         <p class="navbar-text text-white mb-2 hidden_P" style="visibility: hidden">
             Hi, Bryan Altes
         </p>
-        <p class="text-white mb-2" id="title"></p>
+        <p class="text-white my-2" id="title"></p>
         <div class="d-flex">
             <p class="navbar-text text-white mb-1 header_username">
-                Hi, Bryan Altes
+                Hi, {{ $authenticated->firstname }}{{ $authenticated->lastname }}
             </p>
-            <div class="dropdown">
+            <div class="dropdown" style="width: 75px; margin-bottom: 7px">
                 <svg style="width: 20px" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                     class="bi bi-person-circle text-white mx-5 mt-2 dropdown-toggle" viewBox="0 0 16 16"
                     id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -25,7 +25,7 @@
                         d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-7a7 7 0 00-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 008 1z">
                     </path>
                 </svg>
-                <div class="dropdown-menu" style="width: 60px" aria-labelledby="dropdownMenuButton">
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="/userprofile">View Profile</a>
                     <a class="dropdown-item" href="/">Live Now!</a>
                     <a class="dropdown-item" href="/logout">Log-out</a>
@@ -209,7 +209,12 @@
                    @foreach($models as $model)
                     <div class="d-flex mt-2">
                         <div class="round-img-right">
+                            @if($model->profile != NULL)
                             <img src="{{asset('storage/uploads/' .$model->profile. '')}}" class="round-img" alt="">
+                            @endif
+                            @if($model->profile == NULL)
+                            <img src="{{ asset('image/download (10).png') }}" class="round-img" alt="">
+                            @endif
                         </div>
                         <div class="d-flex flex-column justify-content-center ml-2">
                         {{$model->name}}
