@@ -19,7 +19,7 @@
     @if($paid->premiumvideo == $post->image_video)
     <div class="col-lg-4 col-6 p-0 text-center img-block p-1">
       <div class="premium-video-container">
-        <video onclick="videoclick(event)" class="model-post-video w-100 p-0 videos" id="{{$post->image_video}}">
+        <video onclick="paidvideo(event)" class="model-post-video w-100 p-0 videos" id="{{$post->image_video}}">
             <source src="{{asset('storage/uploads/' .$post->image_video. '')}}" type="video/mp4">
         </video>
         <button class="btn btn-warning btn-sm text-light rounded-pill btn_post post-tag">Premium</button>
@@ -53,7 +53,7 @@
     @else
     <div class="col-lg-4 col-6 p-0 text-center img-block p-1">
       <div class="premium-video-container">
-        <video onclick="videoclick(event)" class="model-post-video w-100 p-0 videos" id="{{$post->image_video}}" style="filter: blur(10px)">
+        <video onclick="othervideo('{{$post->image_video}}', '{{$post->amount}}')" class="model-post-video w-100 p-0 videos" id="{{$post->image_video}}" style="filter: blur(10px)">
             <source src="{{asset('storage/uploads/' .$post->image_video. '')}}" type="video/mp4">
         </video>
         <button class="btn btn-warning btn-sm text-light rounded-pill btn_post post-tag">Premium</button>
@@ -76,7 +76,7 @@
     @else
     <div class="col-lg-4 col-6 p-0 text-center img-block p-1">
       <div class="premium-video-container">
-        <video onclick="videoclick(event)" class="model-post-video w-100 p-0 videos" id="{{$post->image_video}}" style="filter: blur(10px)">
+        <video onclick="othervideo('{{$post->image_video}}', '{{$post->amount}}')" class="model-post-video w-100 p-0 videos" id="{{$post->image_video}}" style="filter: blur(10px)">
             <source src="{{asset('storage/uploads/' .$post->image_video. '')}}" type="video/mp4">
         </video>
         <button class="btn btn-warning btn-sm text-light rounded-pill btn_post post-tag">Premium</button>
@@ -115,6 +115,10 @@
   </div>
   <button id="btn-modal" style="height: 0;" class="m-0 p-0 border-0" data-toggle="modal" data-target="#confirmDelete">
   </button>
+  <form style="display: none" action="{{ route('videostripe') }}" method="GET" id="form">
+    <input type="hidden" id="var1" name="video" value="" />
+    <input type="hidden" id="var2" name="amount" value="" />
+  </form>
 </div>
 <script>
 document.onreadystatechange = function () {
@@ -123,23 +127,19 @@ document.onreadystatechange = function () {
   }
 }
 function payclick(event) {
-  let selectvideo = localStorage.getItem("selectvideo");
-  $(document).ready(function() {
-      $.ajaxSetup({
-          headers: {
-              'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-          }
-      });
-      $.post("/paid", {
-          premiumvideo: selectvideo
-      }, function(result) {
-          window.location.href = '/premiumvideos';
-      });
-  });
+  let video = localStorage.getItem("video");
+  let amount = localStorage.getItem("amount");
+  console.log(video, amount);
+  $("#var1").val(video);
+  $("#var2").val(amount);
+  $("#form").submit();
 }
-function videoclick(event) {
-  let blur = event.currentTarget.style.filter;
-  if (blur != 'blur(10px)') {
+function othervideo(id, amount) {
+    document.getElementById('btn-modal').click();
+    localStorage.setItem("video", id);
+    localStorage.setItem("amount", amount);
+}
+function paidvideo(event) {
     if (event.currentTarget.playing) {
       event.currentTarget.pause();
     }
@@ -147,11 +147,6 @@ function videoclick(event) {
       event.currentTarget.play();
     }
     event.currentTarget.style.zIndex = 1;
-  }
-  else {
-    document.getElementById('btn-modal').click();
-    localStorage.setItem("selectvideo", event.currentTarget.id);
-  }
 }
 </script>
 @endsection

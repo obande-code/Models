@@ -1,464 +1,586 @@
 .model_round_img {
-  width: 7vw;
+    width: 7vw;
 }
+
 body {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
+
 @media only screen and (max-width: 426px) {
-  .models_search {
-    display: none !important;
-  }
-  .models_round_img_container {
-    display: none !important;
-  }
-  .maincontent_img {
-    width: 100% !important;
-  }
-  .main {
-    padding: 0px !important;
-  }
-  .header_username {
-    display: none;
-  }
+    .models_search {
+        display: none !important;
+    }
+    .models_round_img_container {
+        display: none !important;
+    }
+    .maincontent_img {
+        width: 100% !important;
+    }
+    .main {
+        padding: 0px !important;
+    }
+    .header_username {
+        display: none;
+    }
 }
+
 .search_input {
-  width: 90%;
+    width: 90%;
 }
+
 .bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 @media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
 }
+
 @media (max-width: 768px) {
-  .models_search {
-    display: none !important;
-  }
+    .models_search {
+        display: none !important;
+    }
 }
+
 .image_middle {
-  position: relative;
-  border-radius: 200px;
-  overflow: hidden;
-  margin-top: -15%;
-  margin-left: 35%;
-  width: 30%;
+    position: relative;
+    border-radius: 200px;
+    overflow: hidden;
+    margin-top: -15%;
+    margin-left: 35%;
+    width: 30%;
 }
+
 .image_middle:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
+    content: "";
+    display: block;
+    padding-bottom: 100%;
 }
+
 .user-image {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%; 
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
+
 .video_img {
-  width: 33%;
+    width: 33%;
 }
+
 .post_img {
-  width: 100px;
-  overflow: hidden;
+    width: 100px;
+    overflow: hidden;
 }
+
 .premium-video {
-  width: 100px;
-  overflow: hidden;
+    width: 100px;
+    overflow: hidden;
 }
+
 .btn_post {
-  width: 100px;
+    width: 100px;
 }
+
 .post_item {
-  border-bottom: 1px solid;
-  border-color: darkgray;
-  background: white;
-  cursor: pointer;
+    border-bottom: 1px solid;
+    border-color: darkgray;
+    background: white;
+    cursor: pointer;
 }
+
 @media (min-width: 768px) {
-  .btn_addpost {
-    width: 300px !important;
-    left: 40%;
-  }
+    .btn_addpost {
+        width: 300px !important;
+        left: 40%;
+    }
 }
+
 .btn_delpost {
-  width: 30px;
+    width: 30px;
 }
+
 .btn_editpost {
-  width: 30px;
+    width: 30px;
 }
+
 .edit_del_block {
-  top: 0;
-  height: 125px;
-  background: rgba(255, 255, 255, 0.7);
-  z-index: -1;
+    top: 0;
+    height: 125px;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: -1;
 }
+
 .signup_input {
-  border: 0;
-  border-bottom: 1px solid;
-  border-radius: 0;
-  padding: 0;
+    border: 0;
+    border-bottom: 1px solid;
+    border-radius: 0;
+    padding: 0;
 }
+
 .signup_input:focus {
-  border-color: black !important;
-  box-shadow: none !important;
+    border-color: black !important;
+    box-shadow: none !important;
 }
+
 .upload_input {
-  z-index: -1;
-  opacity: 0;
-  position: absolute;
+    z-index: -1;
+    opacity: 0;
+    position: absolute;
 }
+
 .upload_label {
-  width: 100px;
-  position: absolute;
-  right: 20px;
+    width: 100px;
+    position: absolute;
+    right: 20px;
 }
+
 .login_button {
-  background-color: #a81818;
-  border-color: #a81818;
+    background-color: #a81818;
+    border-color: #a81818;
 }
+
 .setting_icon {
-  width: 37px;
-  cursor: pointer;
+    width: 37px;
+    cursor: pointer;
 }
+
 .chat_icon {
-  width: 24px;
+    width: 24px;
 }
+
 @media (max-width: 767.98px) {
-  .hidden_p {
-    display: none;
-  }
-  .sidebar_footer {
-    display: none;
-  }
-  .model_img_mobile {
-    width: 100% !important;
-  }
+    .hidden_p {
+        display: none;
+    }
+    .sidebar_footer {
+        display: none;
+    }
+    .model_img_mobile {
+        width: 100% !important;
+    }
 }
 
 .sidebar_footer {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
 }
 
 .heard_img {
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
 }
 
 .line {
-  height: 1px;
-  background-color: darkgray;
+    height: 1px;
+    background-color: darkgray;
 }
 
 .red_arrow {
-  width: 30px;
-  height: 30px;
+    width: 30px;
+    height: 30px;
 }
+
 .post_badge {
-  width: 60px;
-  font-size: 9px;
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  height: 20px;
-  padding: 0;
+    width: 60px;
+    font-size: 9px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    height: 20px;
+    padding: 0;
 }
+
 .post-tag {
-  width: 60px;
-  font-size: 9px;
-  position: absolute;
-  left: 10px;
-  top: 5px;
-  height: 20px;
-  padding: 0;
+    width: 60px;
+    font-size: 9px;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    height: 20px;
+    padding: 0;
 }
+
 .post-amount {
-  width: 60px;
-  font-size: 9px;
-  position: absolute;
-  right: -10px;
-  top: 5px;
-  height: 20px;
-  padding: 0;
+    width: 60px;
+    font-size: 9px;
+    position: absolute;
+    right: -10px;
+    top: 5px;
+    height: 20px;
+    padding: 0;
 }
+
 .post-description {
-  width: 100%;
-  font-size: 9px;
-  position: absolute;
-  left: 0;
-  top: 50px;
-  /* height: 20px; */
-  padding: 0;
+    width: 100%;
+    font-size: 9px;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    /* height: 20px; */
+    padding: 0;
 }
+
 .post-username {
-  width: 100%;
-  font-size: 9px;
-  position: absolute;
-  left: 0;
-  bottom: 8px;
-  padding: 0;
+    width: 100%;
+    font-size: 9px;
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    padding: 0;
 }
+
 .post-duration {
-  width: 100%;
-  font-size: 9px;
-  position: absolute;
-  left: 0;
-  bottom: 5px;
-  padding: 0;
+    width: 100%;
+    font-size: 9px;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    padding: 0;
 }
+
 .duration-span {
-  background-color: grey;
-  border-radius: 20px;
-  padding: 3px 5px;
+    background-color: grey;
+    border-radius: 20px;
+    padding: 3px 5px;
 }
+
 .post-user-image {
-  width: 35%;
-  overflow: hidden;
-  height: 35%;
-  border-radius: 200px;
-  display: flex;
-  position: absolute;
-  left: 33%;
-  top: 40%;
+    width: 35%;
+    overflow: hidden;
+    height: 35%;
+    border-radius: 200px;
+    display: flex;
+    position: absolute;
+    left: 33%;
+    top: 40%;
 }
+
 .info_image {
-  position: absolute;
-  width: 20px;
-  right: 10px;
-  top: 33px;
+    position: absolute;
+    width: 20px;
+    right: 10px;
+    top: 33px;
 }
+
 .model_info_image {
-  position: absolute;
-  width: 20px;
-  right: 10px;
-  top: 10px;
+    position: absolute;
+    width: 20px;
+    right: 10px;
+    top: 10px;
 }
+
 .chat_user {
-  background-color: black;
-  width: 20px;
+    background-color: black;
+    width: 20px;
 }
+
 .btn-subscribe {
-  padding: 0 10px;
-  margin-left: 10px;
+    padding: 0 10px;
+    margin-left: 10px;
 }
+
 .heart-img {
-  width: 30px;
-  cursor: pointer;
+    width: 30px;
+    cursor: pointer;
 }
+
 .chat-img {
-  width: 30px;
+    width: 30px;
 }
+
 .subscribe_image {
-  filter: blur(30px);
+    filter: blur(30px);
 }
+
 .premium_image {
-  filter: blur(30px);
+    filter: blur(30px);
 }
+
 .premium-video-container {
-  overflow: hidden;
-  border: 1px solid white;
+    overflow: hidden;
+    border: 1px solid white;
 }
+
 .post-name {
-  margin-top: -28px;
-  margin-bottom: 0px;
-  background-color: black;
-  opacity: 0.5;
-  padding: 5px 0;
+    margin-top: -28px;
+    margin-bottom: 0px;
+    background-color: black;
+    opacity: 0.5;
+    padding: 5px 0;
 }
+
 .img-block {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
 }
+
 .model-post-img {
-  height: 150px;
-  background-color: brown;
+    height: 150px;
+    background-color: brown;
 }
+
 .img-container {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
+
 .img-container:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
+    content: "";
+    display: block;
+    padding-bottom: 100%;
 }
+
 .free-img {
-  position: absolute; 
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; 
-  width: 100%; 
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
+
 .premium-video-container {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
+
 .premium-video-container:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%; 
+    content: "";
+    display: block;
+    padding-bottom: 100%;
 }
+
 .model-post-video {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; 
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
-  object-position: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
+
 .premium-img {
-  height: 140px;
+    height: 140px;
 }
+
 .img-contain {
-  height: 100px;
+    height: 100px;
 }
+
 .paginate-block {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
+
 .change-cover {
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  top: 10px;
-  background: black;
-  opacity: 0.6;
-  cursor: pointer;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 10px;
+    background: black;
+    opacity: 0.6;
+    cursor: pointer;
 }
+
 .change-user {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 0;
-  text-align: center;
-  background: black;
-  opacity: 0.5;
-  cursor: pointer;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+    text-align: center;
+    background: black;
+    opacity: 0.5;
+    cursor: pointer;
 }
+
 .cover-img {
-  width: 100%;
-  height: 9vw;
+    width: 100%;
+    height: 7vw;
 }
+
 .model-cover {
-  height: 20vw;
+    height: 12vw;
 }
+
 .btn-modal {
-  height: 0;
-  width: 0;
-  visibility: hidden;
-  border: 0;
-  padding: 0;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    border: 0;
+    padding: 0;
 }
+
 .modal-dialog {
-  margin-top: 90px;
+    margin-top: 90px;
 }
+
 .item-active {
-  border-radius: 20px;
-  background: #A05656;
-  margin-right: 10px;
+    border-radius: 20px;
+    background: #A05656;
+    margin-right: 10px;
 }
+
 .round-img-container {
-  position: relative;
-  width: 100%;
-  border-radius: 100px;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    border-radius: 100px;
+    overflow: hidden;
 }
+
 .round-img-container:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%; 
+    content: "";
+    display: block;
+    padding-bottom: 100%;
 }
+
 .round-img-right {
-  position: relative;
-  width: 70px;
-  border-radius: 100px;
-  overflow: hidden;
+    position: relative;
+    width: 70px;
+    border-radius: 100px;
+    overflow: hidden;
 }
+
 .round-img-right:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
+    content: "";
+    display: block;
+    padding-bottom: 100%;
 }
+
 .round-img {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
+
 .carousel-indicators li {
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
 }
+
 .carousel-img {
-  height: 300px !important;
+    height: 300px !important;
 }
+
 .advertise {
-  width: 75%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 10px;
-  box-shadow: 0px 2px 8px darkgrey;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0px 2px 8px darkgrey;
 }
+
 .advertise-title {
-  align-self: start;
-  font-weight: bold;
+    align-self: start;
+    font-weight: bold;
 }
+
 .blog-image {
-  width: 100%;
+    width: 100%;
 }
+
 .blog-body {
-  font-size: 1rem;
+    font-size: 1rem;
 }
+
 .blog-block {
-  height: fit-content;
-  width: 350px;
-  margin: 10px 10px 0 0;
-  box-shadow: 0px 2px 8px darkgrey;
+    height: fit-content;
+    width: 350px;
+    margin: 10px 10px 0 0;
+    box-shadow: 0px 2px 8px darkgrey;
 }
+
 .mail-img {
-  width: 40%;
+    width: 40%;
 }
+
 .mail-title {
-  width: 60%;
+    width: 60%;
 }
+
 .phone-img {
-  width: 80px;
+    width: 80px;
 }
+
 .faqs-text {
-  font-size: 15px;
+    font-size: 15px;
 }
+
 .box-shadow {
-  box-shadow: 0px 2px 8px darkgrey
+    box-shadow: 0px 2px 8px darkgrey
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    right: 10px;
+    top: -10px;
+    position: absolute;
+    border-bottom: 11px solid white;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.7);
+    width: 86%;
+}
+
+@media only screen and (max-width: 576px) {
+    .modal-content {
+        width: 95%;
+    }
+}
+
+.flag-img {
+    width: 30px;
+    height: 20px;
+}
+
+.border-notop {
+    border: 1px solid grey;
+    border-top: 0;
+}
+
+.border-nobottom {
+    border: 1px solid grey;
+    border-bottom: 0;
+    border-top: 0;
+}
+.subscriptionfee {
+    height: 0;
+    width: 0;
+    padding: 0;
+    border: 0;
 }

@@ -271,5 +271,7 @@ Route::get('send-mail', [
     'sendMail',
 ])->name('send.mail');
 
-Route::get('stripe', [App\Http\Controllers\StripeController::class, 'stripe']);
+Route::get('stripe', [App\Http\Controllers\StripeController::class, 'stripe'])->name('stripe');
+Route::get('videostripe', [App\Http\Controllers\VideoStripeController::class, 'stripe'])->name('videostripe');
 Route::post('stripe', [App\Http\Controllers\StripeController::class, 'stripePost'])->name('stripe.post');
+Route::post('videostripe', [App\Http\Controllers\VideoStripeController::class, 'stripePost'])->name('videostripe.post');

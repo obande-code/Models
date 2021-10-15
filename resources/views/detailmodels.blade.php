@@ -34,7 +34,16 @@
         </div>
         
         <div class="d-flex my-2">
-            <button class="btn rounded-pill btn-outline-danger btn-sm btn-subscribe mx-1" onclick="subscribe('{{$model[0]->name}}')">Subscribe</button>
+            @if(sizeof($subscriber) > 0)
+            <button class="btn rounded-pill btn-outline-danger btn-subscribe mx-1">Subscribe</button>
+            @else
+            <form method="GET" action="{{ route('stripe') }}">
+            @csrf
+                <input id="subscriptionfee" class="subscriptionfee" type="text" value="{{$profile[0]->subscriptionfee}}" name="subscriptionfee">
+                <input id="model" class="subscriptionfee" type="text" value="{{$model[0]->name}}" name="model">
+                <button class="btn rounded-pill btn-outline-danger btn-subscribe mx-1" onclick="subscribe('{{$model[0]->name}}')">Subscribe</button>
+            </form>
+            @endif
             @if(sizeof($favorite) > 0)
             <img src="{{ asset('image/download (72).png') }}"  onclick="removefavorite('{{$model[0]->name}}')" class="mx-2 heart-img" alt="">
             @endif
@@ -98,23 +107,7 @@
     </div>
 </div>
 <script>
-    function subscribe(model) {
-        $(document).ready(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.post("/subscriber", {
-                subscriber: model
-            }, function(result) {
-                let subscribes = document.getElementsByClassName('subscribe_image');
-                for (let index = 0; index < subscribes.length; index++) {
-                    subscribes[index].style.filter = 'blur(0)';
-                }
-            });
-        });
-    }
+    
     function infoshow() {
         document.getElementById('modalbutton').click();
     }
