@@ -16,7 +16,7 @@
             @endif
             <img src="{{ asset('image/download (74).png') }}" class="model_info_image" onmouseover="infoshow()" alt="">
             
-            <a href="/models">
+            <!-- <a href="/models">
                 <div class="image_middle">
                     @if($model[0]->profile == NULL)
                     <img src="{{ asset('image/cat5.jpg') }}" class="w-100 user-image" alt="">
@@ -25,7 +25,7 @@
                     <img src="{{asset('storage/uploads/' .$model[0]->profile. '')}}" class="w-100 user-image" alt="">
                     @endif
                 </div>
-            </a>
+            </a> -->
             <div class="d-flex justify-content-center mb-2 font-weight-bold">
                 <img src="{{ asset('image/download (38).png') }}" class="ml-auto mx-3" style="visibility:hidden" alt="">
                 {{$model[0]->name}}
