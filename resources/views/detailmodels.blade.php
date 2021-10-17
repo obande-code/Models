@@ -8,13 +8,13 @@
                 Launch demo modal
             </button>
             
-            @if($model[0]->cover == NULL)
+            <!-- @if($model[0]->cover == NULL)
             <img src="{{ asset('image/download (2).png') }}" class="model-cover" alt="">
             @endif
             @if($model[0]->cover != NULL)
             <img src="{{asset('storage/uploads/' .$model[0]->cover. '')}}" class="model-cover" alt="">
             @endif
-            <img src="{{ asset('image/download (74).png') }}" class="model_info_image" onmouseover="infoshow()" alt="">
+            <img src="{{ asset('image/download (74).png') }}" class="model_info_image" onmouseover="infoshow()" alt=""> -->
             
             <a href="/models">
                 <div class="image_middle">
