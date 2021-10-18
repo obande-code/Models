@@ -14,7 +14,7 @@
         <img src="{{ asset('image/download (44).png') }}" class="mt-2" alt="">
         <div class="d-flex mt-2">
             <img src="{{ asset('image/download (45).png') }}" class="heard_img" alt="">
-            <!-- <p class="mx-2">5 others</p> -->
+            <p class="mx-2">5 others</p>
         </div>
         <div class="line"></div>
         <div class="d-flex justify-content-around mt-2">
