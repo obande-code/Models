@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/home', [
     App\Http\Controllers\HomeController::class,
     'index',
-// ])->name('home');
+])->name('home');
 Route::get('/chats', [
     App\Http\Controllers\HomeController::class,
     'index',
