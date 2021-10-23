@@ -18,12 +18,12 @@
             
             <a href="/models">
                 <div class="image_middle">
-                    <!-- @if($model[0]->profile == NULL)
+                    @if($model[0]->profile == NULL)
                     <img src="{{ asset('image/cat5.jpg') }}" class="w-100 user-image" alt="">
                     @endif
                     @if($model[0]->profile != NULL)
                     <img src="{{asset('storage/uploads/' .$model[0]->profile. '')}}" class="w-100 user-image" alt="">
-                    @endif -->
+                    @endif
                 </div>
             </a>
             <div class="d-flex justify-content-center mb-2 font-weight-bold">
