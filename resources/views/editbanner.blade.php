@@ -30,7 +30,7 @@
 </div>
 <script>
 function filechoose(event) {
-    document.getElementById('uploadImage').value = document.getElementById('image_video').value;
+    // document.getElementById('uploadImage').value = document.getElementById('image_video').value;
 }
 </script>
 @endsection
