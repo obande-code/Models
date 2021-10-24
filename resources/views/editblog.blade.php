@@ -13,11 +13,11 @@
                     <input type="file" onchange="filechoose(event)" enctype=”multipart/form-data”
                         class="form-control upload_input signup_input" id="image_video" placeholder="Upload here"
                         name="image_video">
-                    <input type="text" class="form-control signup_input mt-2" id="uploadImage" placeholder="Upload here"
+                    <!-- <input type="text" class="form-control signup_input mt-2" id="uploadImage" placeholder="Upload here"
                         name="uploadImage" value="{{$post[0]->image}}" autofocus>
                     <input type="text" class="form-control signup_input" id="id" style="visibility:hidden; height: 0"
                         required name="id" value="{{$post[0]->id}}">
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label for="title" class="font-weight-bold mb-0">Title</label>
                     <input type="text" class="form-control signup_input" id="title" placeholder="Type here"
