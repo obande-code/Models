@@ -39,7 +39,7 @@
         <div class="form-group row">
           <label for="inputPassword3" class="col-sm-2 col-form-label">Message</label>
           <div class="col-sm-10">
-            <textarea name="message"  class="form-control" style="width:100%; height:60px;"></textarea>
+            <!-- <textarea name="message"  class="form-control" style="width:100%; height:60px;"></textarea> -->
           </div>
         </div>
         <div class="form-group row mb-0">
