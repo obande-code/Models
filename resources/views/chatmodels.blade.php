@@ -35,9 +35,9 @@
         <form id="chatForm">
             <div class="d-flex mt-1">
 
-                <input id="chatMessage" type="text" aria-label="First name" class="form-control rounded-pill"
+                <!-- <input id="chatMessage" type="text" aria-label="First name" class="form-control rounded-pill"
                     placeholder="Write a comment">
-                <img src="{{ asset('image/download (48).png') }}" alt="" class="ml-2 mt-1 red_arrow">
+                <img src="{{ asset('image/download (48).png') }}" alt="" class="ml-2 mt-1 red_arrow"> -->
 
             </div>
         </form>
