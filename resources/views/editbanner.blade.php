@@ -23,7 +23,7 @@
                     <input type="text" class="form-control signup_input" id="description" placeholder="Type here"
                         required name="description" value="{{$post[0]->description}}" autofocus>
                 </div>
-                <button type="submit" class="btn btn-danger login_button fixed-bottom btn_addpost w-100">Upload</button>
+                <!-- <button type="submit" class="btn btn-danger login_button fixed-bottom btn_addpost w-100">Upload</button> -->
             </form>
         </div>
     </div>
