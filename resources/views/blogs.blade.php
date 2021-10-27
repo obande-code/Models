@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 @section('mainContent')
 <div class="d-flex justify-content-center flex-wrap">
-    <!-- <div class="d-flex flex-column"> -->
+    <div class="d-flex flex-column">
         @foreach($blogs as $blog)
         @if($loop->index%2 == 0)
         <div class="p-2 d-flex flex-column border rounded blog-block">
