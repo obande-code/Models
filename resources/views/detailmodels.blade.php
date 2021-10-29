@@ -26,11 +26,11 @@
                     @endif
                 </div>
             </a>
-            <!-- <div class="d-flex justify-content-center mb-2 font-weight-bold">
+            <div class="d-flex justify-content-center mb-2 font-weight-bold">
                 <img src="{{ asset('image/download (38).png') }}" class="ml-auto mx-3" style="visibility:hidden" alt="">
                 {{$model[0]->name}}
                 <img src="{{ asset('Bootstrap-Country-Picker-jQuery/css/flags/'.$model[0]->nationality.'.png') }}" class="ml-auto mx-3 flag-img" alt="">
-            </div> -->
+            </div>
         </div>
         
         <div class="d-flex my-2">
