@@ -51,7 +51,7 @@
             <img src="{{ asset('image/download (71).png') }}"  onclick="addfavorite('{{$model[0]->name}}')" class="mx-2 heart-img" alt="">
             @endif
             <a class="mx-1" href="{{ url('models/' . $model[0]->name.'/chat') }}">
-                <img src="{{ asset('image/download (37).png') }}" class="chat-img" alt="">
+                <!-- <img src="{{ asset('image/download (37).png') }}" class="chat-img" alt=""> -->
             </a>
         </div>
         <p>Hi Honey, do you want to be closer to me? Natural beauty without silicone. Subscribe to me, dear ones</p>
