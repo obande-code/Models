@@ -18,14 +18,14 @@
         </div>
         <div class="line"></div>
         <div class="d-flex justify-content-around mt-2">
-            <!-- <div class="d-flex">
+            <div class="d-flex">
                 <img src="{{ asset('image/download (46).png') }}" class="heard_img" alt="">
                 <p style="margin-left: 10px">Like</p>
             </div>
             <div class="d-flex">
                 <img src="{{ asset('image/download (47).png') }}" class="heard_img" alt="">
                 <p style="margin-left: 10px">Comment</p>
-            </div> -->
+            </div>
         </div>
         <div class="line mb-4"></div>
         <div id="chatLog">
