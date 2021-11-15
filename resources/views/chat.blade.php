@@ -10,14 +10,14 @@
                 @{{ message.user.name }}: @{{ message.message }}
             </div>
 
-            <!-- <div class="input-group">
+            <div class="input-group">
                 <input type="text" name="message" class="form-control" placeholder="Type your message here..."
                     v-model="newMessage" @keyup.enter="sendMessage">
 
                 <button class="btn btn-primary" @click="sendMessage">
                     Send
                 </button>
-            </div> -->
+            </div>
         </div>
     </div>
 </div>
