@@ -3,12 +3,12 @@
 <div class="d-flex justify-content-center flex-wrap">
   <div class="w-50 d-flex flex-column model_img_mobile mt-5 p-2">
       <h5 class="m-auto">ASK US HOW CAN WE HELP YOU</h5>
-      <p class="mt-4">
+      <!-- <p class="mt-4">
       Lorem Ipsum.Lorem Ipsum.Lorem Ipsum?
       Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.
       Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.
       Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.
-      <br>
+      <br> -->
       <br>
       Lorem Ipsum.Lorem Ipsum.Lorem Ipsum?
       Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.
