@@ -16,11 +16,11 @@
       Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.
       <br>
       <br>
-      Lorem Ipsum.Lorem Ipsum.Lorem Ipsum?
+      <!-- Lorem Ipsum.Lorem Ipsum.Lorem Ipsum?
       Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.
       Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.
       Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.
-      <br>
+      <br> -->
       <br>
       </p>
       <form class="border border-dark rounded p-4">
