@@ -32,13 +32,13 @@
                                 placeholder="Type here" value="{{$user[0]->lastname}}" required name="lastname"
                                 autocomplete="lastname" autofocus>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="nationality" class="font-weight-bold mb-0">Nationality</label>
                             <input type="text" disabled
                                 class="form-control signup_input @error('nationality') is-invalid @enderror"
                                 name="nationality" id="nationality" placeholder="Type here"
                                 value="{{$user[0]->nationality}}" required autocomplete="nationality" autofocus>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label for="birthdate" class="font-weight-bold mb-0">Birthdate</label>
                             <input type="text" disabled
