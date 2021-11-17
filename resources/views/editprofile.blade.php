@@ -85,14 +85,14 @@
                                 name="instagram" id="instagram" placeholder="Type here"
                                 value="{{$profile[0]->instagram}}" required autocomplete="instagram" autofocus>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="subscriptionfee" class="font-weight-bold mb-0">Subscription Fee</label>
                             <input type="text"
                                 class="form-control signup_input @error('subscriptionfee') is-invalid @enderror"
                                 name="subscriptionfee" id="subscriptionfee" placeholder="Type here"
                                 value="{{$profile[0]->subscriptionfee}}" required autocomplete="subscriptionfee"
                                 autofocus>
-                        </div>
+                        </div> -->
                         <div class="form-group upload_block">
                             <label class="font-weight-bold mb-0">Scanned Valid Government Issued
                                 ID</label>
