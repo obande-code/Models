@@ -78,13 +78,13 @@
                                 name="facebook" id="facebook" placeholder="Type here" value="{{$profile[0]->facebook}}"
                                 required autocomplete="facebook" autofocus>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="instagram" class="font-weight-bold mb-0">Instagram</label>
                             <input type="text"
                                 class="form-control signup_input @error('instagram') is-invalid @enderror"
                                 name="instagram" id="instagram" placeholder="Type here"
                                 value="{{$profile[0]->instagram}}" required autocomplete="instagram" autofocus>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label for="subscriptionfee" class="font-weight-bold mb-0">Subscription Fee</label>
                             <input type="text"
