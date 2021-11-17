@@ -5,7 +5,7 @@
         <div class="card-body">
             <form method="POST" action="{{ route('editsaveadvertise') }}" enctype="multipart/form-data">
                 @csrf
-                <!-- <div class="form-group"> -->
+                <div class="form-group">
                     <label class="font-weight-bold mb-0">Image / Video</label>
                     <label for="image_video" class="btn btn-login btn-success btn-block upload_label login_button">
                         {{ __('Upload') }}
