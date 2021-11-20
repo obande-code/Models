@@ -11,12 +11,12 @@
             </div>
 
             <div class="input-group">
-                <!-- <input type="text" name="message" class="form-control" placeholder="Type your message here..."
+                <input type="text" name="message" class="form-control" placeholder="Type your message here..."
                     v-model="newMessage" @keyup.enter="sendMessage">
 
                 <button class="btn btn-primary" @click="sendMessage">
                     Send
-                </button> -->
+                </button>
             </div>
         </div>
     </div>
