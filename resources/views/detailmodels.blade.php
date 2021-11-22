@@ -45,7 +45,7 @@
             </form>
             @endif
             @if(sizeof($favorite) > 0)
-            <!-- <img src="{{ asset('image/download (72).png') }}"  onclick="removefavorite('{{$model[0]->name}}')" class="mx-2 heart-img" alt=""> -->
+            <img src="{{ asset('image/download (72).png') }}"  onclick="removefavorite('{{$model[0]->name}}')" class="mx-2 heart-img" alt="">
             @endif
             @if(sizeof($favorite) == 0)
             <img src="{{ asset('image/download (71).png') }}"  onclick="addfavorite('{{$model[0]->name}}')" class="mx-2 heart-img" alt="">
