@@ -39,9 +39,9 @@
             @else
             <form method="GET" action="{{ route('stripe') }}">
             @csrf
-                <!-- <input id="subscriptionfee" class="subscriptionfee" type="text" value="{{$profile[0]->subscriptionfee}}" name="subscriptionfee">
+                <input id="subscriptionfee" class="subscriptionfee" type="text" value="{{$profile[0]->subscriptionfee}}" name="subscriptionfee">
                 <input id="model" class="subscriptionfee" type="text" value="{{$model[0]->name}}" name="model">
-                <button class="btn rounded-pill btn-outline-danger btn-subscribe mx-1" onclick="subscribe('{{$model[0]->name}}')">Subscribe</button> -->
+                <button class="btn rounded-pill btn-outline-danger btn-subscribe mx-1" onclick="subscribe('{{$model[0]->name}}')">Subscribe</button>
             </form>
             @endif
             @if(sizeof($favorite) > 0)
