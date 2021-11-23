@@ -17,7 +17,7 @@
                     <textarea type="text" class="form-control signup_input" id="answer" placeholder="Type here"
                         required name="answer" value="{{$post[0]->answer}}" autofocus></textarea>
                 </div>
-                <button type="submit" class="btn btn-danger login_button fixed-bottom btn_addpost w-100">Upload</button>
+                <!-- <button type="submit" class="btn btn-danger login_button fixed-bottom btn_addpost w-100">Upload</button> -->
             </form>
         </div>
     </div>
