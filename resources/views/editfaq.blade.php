@@ -5,13 +5,13 @@
         <div class="card-body">
             <form method="POST" action="{{ route('editsavefaq') }}" enctype="multipart/form-data">
                 @csrf
-                <!-- <div class="form-group">
+                <div class="form-group">
                     <label for="question" class="font-weight-bold mb-0">Question</label>
                     <textarea type="text" class="form-control signup_input" id="question" placeholder="Type here"
                         required name="question" value="{{$post[0]->question}}" autofocus></textarea>
                     <input type="text" class="form-control signup_input" id="id" style="visibility:hidden; height: 0"
                         required name="id" value="{{$post[0]->id}}">
-                </div> -->
+                </div>
                 <div class="form-group">
                     <label for="answer" class="font-weight-bold mb-0">Answer</label>
                     <textarea type="text" class="form-control signup_input" id="answer" placeholder="Type here"
