@@ -62,10 +62,10 @@
           <img src="{{ asset('image/download (64).png') }}" class="m-3" alt="">
         </div>
         <div class="mail-title d-flex flex-column  justify-content-center">
-          <p class="mb-0">ohaiiimarketing@gmail.com</p>
+          <!-- <p class="mb-0">ohaiiimarketing@gmail.com</p>
           <p class="mb-0">ohaiiirecruitment@gmail.com</p>
           <p class="mb-0">ohaiiidevelopment@gmail.com</p>
-          <p class="mb-0">ohaiiihelpdesk@gmail.com</p>
+          <p class="mb-0">ohaiiihelpdesk@gmail.com</p> -->
         </div>
       </div>
   </div>
