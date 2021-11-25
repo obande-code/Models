@@ -52,10 +52,10 @@
         <div class="mail-img d-flex justify-content-end">
           <img src="{{ asset('image/download (63).png') }}" class="phone-img" alt="">
         </div>
-        <div class="mail-title d-flex flex-column  justify-content-center">
+        <!-- <div class="mail-title d-flex flex-column  justify-content-center">
           <p class="mb-0">+63 927 305 9127</p>
           <p class="mb-0">+632 8551 71230</p>
-        </div>
+        </div> -->
       </div>
       <div class="d-flex justify-content-center">
         <div class="mail-img mail-block d-flex justify-content-end">
