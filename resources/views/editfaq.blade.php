@@ -12,11 +12,11 @@
                     <input type="text" class="form-control signup_input" id="id" style="visibility:hidden; height: 0"
                         required name="id" value="{{$post[0]->id}}">
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="answer" class="font-weight-bold mb-0">Answer</label>
                     <textarea type="text" class="form-control signup_input" id="answer" placeholder="Type here"
                         required name="answer" value="{{$post[0]->answer}}" autofocus></textarea>
-                </div>
+                </div> -->
                 <button type="submit" class="btn btn-danger login_button fixed-bottom btn_addpost w-100">Upload</button>
             </form>
         </div>
