@@ -54,8 +54,8 @@ class AdminController extends Controller
     }
     public function faqs()
     {
-        $faqs = DB::table('faqs')
-            ->get();
+        // $faqs = DB::table('faqs')
+        //     ->get();
         return view('managefaqs', compact('faqs'));
     }
     public function newbanner()
