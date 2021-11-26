@@ -48,8 +48,8 @@ class AdminController extends Controller
     }
     public function blogs()
     {
-        // $blogs = DB::table('blogs')
-        //     ->get();
+        $blogs = DB::table('blogs')
+            ->get();
         return view('manageblogs', compact('blogs'));
     }
     public function faqs()
