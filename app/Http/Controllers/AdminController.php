@@ -29,9 +29,9 @@ class AdminController extends Controller
     }
     public function reject(Request $request)
     {
-        // $model = User::find($request->accept);
-        // $model->isaccept = false;
-        // $model->save();
+        $model = User::find($request->accept);
+        $model->isaccept = false;
+        $model->save();
         echo $request->accept;
     }
     public function banner()
