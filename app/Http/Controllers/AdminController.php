@@ -42,8 +42,8 @@ class AdminController extends Controller
     }
     public function advertise()
     {
-        $advertisements = DB::table('advertisements')
-            ->get();
+        // $advertisements = DB::table('advertisements')
+        //     ->get();
         return view('manageadvertise', compact('advertisements'));
     }
     public function blogs()
