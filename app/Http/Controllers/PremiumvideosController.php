@@ -60,9 +60,9 @@ class PremiumvideosController extends Controller
             ->where('type', 'Premium')
             ->get();
         }
-        $premium = json_decode($premium);
-        shuffle($premium);
-        $username = Auth::user()->name;
+        // $premium = json_decode($premium);
+        // shuffle($premium);
+        // $username = Auth::user()->name;
         return view('premiumvideos', compact('premium'));
     }
 }
