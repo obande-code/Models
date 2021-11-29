@@ -37,9 +37,9 @@ class PremiumvideosController extends Controller
         $paids = DB::table('paids')
             ->where('name', $user)
             ->get();
-        $models = DB::table('users')
-            ->where('usertype', 'model')
-            ->get();
+        // $models = DB::table('users')
+        //     ->where('usertype', 'model')
+        //     ->get();
         $premium = json_decode($premium);
         shuffle($premium);
         return view('premiumvideos', compact('premium'), compact('models'))->with('paids', json_decode($paids));
