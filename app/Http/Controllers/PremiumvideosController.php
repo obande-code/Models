@@ -34,9 +34,9 @@ class PremiumvideosController extends Controller
         $premium = DB::table('posts')
             ->where('type', 'Premium')
             ->get();
-        // $paids = DB::table('paids')
-        //     ->where('name', $user)
-        //     ->get();
+        $paids = DB::table('paids')
+            ->where('name', $user)
+            ->get();
         $models = DB::table('users')
             ->where('usertype', 'model')
             ->get();
