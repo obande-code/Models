@@ -42,7 +42,6 @@ class PremiumvideosController extends Controller
             ->get();
         $premium = json_decode($premium);
         shuffle($premium);
-        // print_r(json_decode($paids));
         return view('premiumvideos', compact('premium'), compact('models'))->with('paids', json_decode($paids));
     }
     public function search(Request $request)
