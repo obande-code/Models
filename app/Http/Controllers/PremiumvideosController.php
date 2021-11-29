@@ -34,14 +34,14 @@ class PremiumvideosController extends Controller
         $premium = DB::table('posts')
             ->where('type', 'Premium')
             ->get();
-        $paids = DB::table('paids')
-            ->where('name', $user)
-            ->get();
-        $models = DB::table('users')
-            ->where('usertype', 'model')
-            ->get();
-        $premium = json_decode($premium);
-        shuffle($premium);
+        // $paids = DB::table('paids')
+        //     ->where('name', $user)
+        //     ->get();
+        // $models = DB::table('users')
+        //     ->where('usertype', 'model')
+        //     ->get();
+        // $premium = json_decode($premium);
+        // shuffle($premium);
         return view('premiumvideos', compact('premium'), compact('models'))->with('paids', json_decode($paids));
     }
     public function search(Request $request)
