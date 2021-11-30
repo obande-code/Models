@@ -52,7 +52,7 @@ class ModelController extends Controller
     }
     public function editprofile()
     {
-        $username = Auth::user()->name;
+        // $username = Auth::user()->name;
         $user = DB::table('users')
             ->where('name', $username)
             ->get();
