@@ -41,9 +41,9 @@ class ModelController extends Controller
         $posts = DB::table('posts')
             ->where('username', $username)
             ->get();
-        // $model = DB::table('users')
-        //     ->where('name', $username)
-        //     ->get();
+        $model = DB::table('users')
+            ->where('name', $username)
+            ->get();
         return view(
             'profilemodel',
             ['model' => json_decode($model)],
