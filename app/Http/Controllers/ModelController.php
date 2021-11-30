@@ -38,9 +38,9 @@ class ModelController extends Controller
     public function profile()
     {
         $username = Auth::user()->name;
-        // $posts = DB::table('posts')
-        //     ->where('username', $username)
-        //     ->get();
+        $posts = DB::table('posts')
+            ->where('username', $username)
+            ->get();
         $model = DB::table('users')
             ->where('name', $username)
             ->get();
