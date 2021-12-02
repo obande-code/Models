@@ -29,9 +29,9 @@ class ModelsController extends Controller
      */
     public function index()
     {
-        // if (session('accept') == false) {
-        //     return redirect()->route('waitaccept');
-        // }
+        if (session('accept') == false) {
+            return redirect()->route('waitaccept');
+        }
         $models = DB::table('users')
             ->where('usertype', 'model')
             ->get();
