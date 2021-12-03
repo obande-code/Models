@@ -64,7 +64,7 @@ class AdminController extends Controller
     }
     public function newblog()
     {
-        return view('newblog');
+        // return view('newblog');
     }
     public function newfaq()
     {
