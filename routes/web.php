@@ -17,10 +17,10 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'init']);
 
 Auth::routes();
 
-Route::get('/home', [
-    App\Http\Controllers\HomeController::class,
-    'index',
-])->name('home');
+// Route::get('/home', [
+//     App\Http\Controllers\HomeController::class,
+//     'index',
+// ])->name('home');
 Route::get('/chats', [
     App\Http\Controllers\HomeController::class,
     'index',
