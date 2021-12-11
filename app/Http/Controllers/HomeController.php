@@ -32,8 +32,8 @@ class HomeController extends Controller
         $models = DB::table('users')
                 ->where('usertype', 'model')
                ->get();
-        $banners = DB::table('banners')
-              ->get();
+        // $banners = DB::table('banners')
+        //       ->get();
         $advertisements = DB::table('advertisements')
               ->get();
         return view('home', compact('banners'))->with('advertisements', json_decode($advertisements));
