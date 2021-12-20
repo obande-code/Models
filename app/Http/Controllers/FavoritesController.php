@@ -33,11 +33,11 @@ class FavoritesController extends Controller
         if (session('accept') == false) {
             return redirect()->route('waitaccept');
         }
-        $user = Auth::user()->name;
-        $models = User::join('favorites', 'favorites.modelname', '=', 'users.name')
-            ->where('favorites.fanname', $user)
-            ->where('users.usertype', 'model')
-            ->get(['users.*']);
+        // $user = Auth::user()->name;
+        // $models = User::join('favorites', 'favorites.modelname', '=', 'users.name')
+        //     ->where('favorites.fanname', $user)
+        //     ->where('users.usertype', 'model')
+        //     ->get(['users.*']);
         return view('favorites', compact('models'));
     }
     public function add(Request $request) {
